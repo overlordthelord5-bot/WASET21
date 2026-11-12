@@ -1,0 +1,6 @@
+{
+  "name": "WASEET - وسيط الاستشارات",
+  "description": "منصة وساطة استشارية رائدة في مصر لربط العملاء بأفضل المستشارين والخبراء المعتمدين في جميع التخصصات.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

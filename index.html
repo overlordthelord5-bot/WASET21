@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Compatibility shim for browser extensions that attempt to reassign window.fetch
+      (function() {
+        try {
+          var originalFetch = window.fetch ? window.fetch.bind(window) : null;
+          var currentFetch = originalFetch;
+          Object.defineProperty(window, 'fetch', {
+            configurable: true,
+            enumerable: true,
+            get: function() {
+              return currentFetch;
+            },
+            set: function(newFetch) {
+              currentFetch = newFetch;
+            }
+          });
+        } catch (e) {
+          // ignore
+        }
+
+        // Prevent browser extension script errors from crashing or halting the app
+        window.addEventListener('error', function(event) {
+          if (event && event.filename && (event.filename.indexOf('chrome-extension://') !== -1 || event.filename.indexOf('moz-extension://') !== -1 || event.filename.indexOf('safari-extension://') !== -1)) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            return true;
+          }
+        }, true);
+      })();
+    </script>
+    <title>WASEET - وسيط الاستشارات</title>
+    <meta name="description" content="منصة وساطة استشارية رائدة في مصر لربط العملاء بأفضل المستشارين والخبراء المعتمدين في جميع التخصصات." />
+    <meta property="og:title" content="WASEET - وسيط الاستشارات" />
+    <meta property="og:description" content="منصة وساطة استشارية رائدة في مصر لربط العملاء بأفضل المستشارين والخبراء المعتمدين في جميع التخصصات." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-blue-100 selection:text-blue-900 min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

@@ -1,0 +1,41 @@
+[
+  {
+    "id": "sub-1794441384532-362",
+    "email": "nile_startup@cairo.eg",
+    "interests": [
+      "الضرائب والفاتورة الإلكترونية",
+      "تأسيس الشركات"
+    ],
+    "subscribedAt": "2026-11-11T23:56:24.532Z",
+    "source": "footer_newsletter"
+  },
+  {
+    "id": "sub-1794441351111-412",
+    "email": "test_founder@egypttech.org",
+    "interests": [
+      "الضرائب والفاتورة الإلكترونية"
+    ],
+    "subscribedAt": "2026-11-11T23:55:51.111Z",
+    "source": "footer_newsletter"
+  },
+  {
+    "id": "sub-demo-1",
+    "email": "founder@techcairo.eg",
+    "subscribedAt": "2026-11-06T23:55:47.686Z",
+    "source": "footer_newsletter",
+    "interests": [
+      "الضرائب",
+      "تأسيس الشركات"
+    ]
+  },
+  {
+    "id": "sub-demo-2",
+    "email": "cfo@alexventures.com",
+    "subscribedAt": "2026-11-09T23:55:47.686Z",
+    "source": "footer_newsletter",
+    "interests": [
+      "الاستشارات المالية",
+      "دراسات الجدوى"
+    ]
+  }
+]
