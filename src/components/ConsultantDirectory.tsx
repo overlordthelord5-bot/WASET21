@@ -36,16 +36,28 @@ export const ConsultantDirectory: React.FC<{
     categories,
     setSelectedConsultant,
     setIsBookingModalOpen,
+    navigateToServicesCatalog,
     lang,
   } = useApp();
 
   const [searchQuery, setSearchQuery] = useState(initialQuery);
   const [selectedCategory, setSelectedCategory] = useState(initialCategoryId);
+  const [selectedCatalogServiceId, setSelectedCatalogServiceId] = useState('');
+  const [catalogServicesList, setCatalogServicesList] = useState<Array<{ id: string; titleAr: string; consultantId: string }>>([]);
   const [maxPrice, setMaxPrice] = useState<number>(3000);
   const [selectedMode, setSelectedMode] = useState<string>('all');
   const [verifiedOnly, setVerifiedOnly] = useState<boolean>(true);
   const [sortBy, setSortBy] = useState<'rating' | 'experience' | 'price_asc' | 'price_desc'>('rating');
   const [favorites, setFavorites] = useState<Record<string, boolean>>({});
+
+  React.useEffect(() => {
+    fetch('/api/services?pageSize=50')
+      .then((r) => r.json())
+      .then((d) => {
+        if (d?.items) setCatalogServicesList(d.items);
+      })
+      .catch(() => {});
+  }, []);
 
   const toggleFavorite = (id: string, e: React.MouseEvent) => {
     e.stopPropagation();
@@ -79,6 +91,12 @@ export const ConsultantDirectory: React.FC<{
           return false;
         }
 
+        // Service filter
+        if (selectedCatalogServiceId) {
+          const targetSrv = catalogServicesList.find((s) => s.id === selectedCatalogServiceId);
+          if (targetSrv && c.id !== targetSrv.consultantId) return false;
+        }
+
         // Verified filter
         if (verifiedOnly && c.verificationStatus !== 'verified') {
           return false;
@@ -93,11 +111,12 @@ export const ConsultantDirectory: React.FC<{
         if (sortBy === 'price_desc') return b.sessionRateEgp - a.sessionRateEgp;
         return 0;
       });
-  }, [consultants, searchQuery, selectedCategory, maxPrice, selectedMode, verifiedOnly, sortBy]);
+  }, [consultants, searchQuery, selectedCategory, selectedCatalogServiceId, catalogServicesList, maxPrice, selectedMode, verifiedOnly, sortBy]);
 
   const resetFilters = () => {
     setSearchQuery('');
     setSelectedCategory('');
+    setSelectedCatalogServiceId('');
     setMaxPrice(3000);
     setSelectedMode('all');
     setVerifiedOnly(false);
@@ -215,13 +234,31 @@ export const ConsultantDirectory: React.FC<{
                 المعتمدون والموثقون فقط
               </span>
             </label>
+            {/* Service Offered Filter */}
+            {catalogServicesList.length > 0 && (
+              <div className="flex items-center gap-2">
+                <span className="text-slate-600 font-medium">الخدمة الاستشارية:</span>
+                <select
+                  value={selectedCatalogServiceId}
+                  onChange={(e) => setSelectedCatalogServiceId(e.target.value)}
+                  className="text-xs bg-slate-50 border border-slate-200 rounded-xl px-2.5 py-1.5 text-slate-800 max-w-[220px] cursor-pointer"
+                >
+                  <option value="">كل الخدمات</option>
+                  {catalogServicesList.map((s) => (
+                    <option key={s.id} value={s.id}>
+                      {s.titleAr}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
           </div>
 
           <div className="flex items-center gap-3">
             <span className="text-slate-500 font-medium">
               النتائج المتاحة: <span className="font-bold text-slate-800">{filteredConsultants.length}</span> مستشار
             </span>
-            {(searchQuery || selectedCategory || maxPrice < 3000 || selectedMode !== 'all') && (
+            {(searchQuery || selectedCategory || selectedCatalogServiceId || maxPrice < 3000 || selectedMode !== 'all') && (
               <button
                 onClick={resetFilters}
                 className="text-red-600 hover:text-red-700 font-semibold flex items-center gap-1 cursor-pointer"
@@ -350,10 +387,16 @@ export const ConsultantDirectory: React.FC<{
                   </span>
                 </div>
 
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5">
+                  <button
+                    onClick={() => navigateToServicesCatalog({ providerId: consultant.id })}
+                    className="px-2.5 py-2 rounded-xl text-xs font-semibold text-blue-700 bg-blue-50 hover:bg-blue-100 transition cursor-pointer whitespace-nowrap"
+                  >
+                    خدماته
+                  </button>
                   <button
                     onClick={() => setSelectedConsultant(consultant)}
-                    className="px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 transition cursor-pointer"
+                    className="px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 transition cursor-pointer whitespace-nowrap"
                   >
                     الملف الشخصي
                   </button>
@@ -362,10 +405,10 @@ export const ConsultantDirectory: React.FC<{
                       setSelectedConsultant(consultant);
                       setIsBookingModalOpen(true);
                     }}
-                    className="px-3.5 py-2 rounded-xl text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-sm transition cursor-pointer flex items-center gap-1"
+                    className="px-3 py-2 rounded-xl text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-sm transition cursor-pointer flex items-center gap-1 whitespace-nowrap"
                   >
                     <Calendar className="w-3.5 h-3.5" />
-                    <span>حجز استشارة</span>
+                    <span>حجز</span>
                   </button>
                 </div>
               </div>

@@ -1,0 +1,1996 @@
+{
+  "categories": [
+    {
+      "id": "scat-accounting",
+      "slug": "accounting-audit",
+      "nameAr": "المحاسبة والمراجعة",
+      "nameEn": "Accounting & Auditing",
+      "descriptionAr": "إعداد ومراجعة القوائم المالية، إمساك الدفاتر، وتطبيق معايير المحاسبة المصرية.",
+      "descriptionEn": "Financial statements, bookkeeping, and Egyptian accounting standards.",
+      "iconName": "Calculator",
+      "requiresLicense": true,
+      "displayOrder": 1,
+      "isActive": true,
+      "subcategories": [
+        {
+          "id": "ssub-fin-stmt",
+          "parentId": "scat-accounting",
+          "slug": "financial-statements",
+          "nameAr": "إعداد القوائم المالية",
+          "nameEn": "Financial Statements",
+          "isActive": true
+        },
+        {
+          "id": "ssub-internal-audit",
+          "parentId": "scat-accounting",
+          "slug": "internal-audit",
+          "nameAr": "المراجعة والرقابة الداخلية",
+          "nameEn": "Internal Audit",
+          "isActive": true
+        },
+        {
+          "id": "ssub-bookkeeping",
+          "parentId": "scat-accounting",
+          "slug": "bookkeeping-setup",
+          "nameAr": "تأسيس الدورة المحاسبية",
+          "nameEn": "Accounting Cycle Setup",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "scat-taxes",
+      "slug": "tax-financial-advisory",
+      "nameAr": "الضرائب والاستشارات المالية",
+      "nameEn": "Tax & Financial Advisory",
+      "descriptionAr": "الفاتورة والإيصال الإلكتروني، ضريبة القيمة المضافة، وضرائب الدخل والتخطيط المالي.",
+      "descriptionEn": "E-Invoicing, VAT, income tax, and corporate financial planning.",
+      "iconName": "Receipt",
+      "requiresLicense": true,
+      "displayOrder": 2,
+      "isActive": true,
+      "subcategories": [
+        {
+          "id": "ssub-einvoice",
+          "parentId": "scat-taxes",
+          "slug": "e-invoicing",
+          "nameAr": "منظومة الفاتورة الإلكترونية",
+          "nameEn": "E-Invoicing Compliance",
+          "isActive": true
+        },
+        {
+          "id": "ssub-vat",
+          "parentId": "scat-taxes",
+          "slug": "vat-returns",
+          "nameAr": "ضريبة القيمة المضافة والدخل",
+          "nameEn": "VAT & Income Tax",
+          "isActive": true
+        },
+        {
+          "id": "ssub-valuation",
+          "parentId": "scat-taxes",
+          "slug": "company-valuation",
+          "nameAr": "تقييم الشركات وهيكلة التمويل",
+          "nameEn": "Valuation & Financing",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "scat-legal",
+      "slug": "legal-advisory",
+      "nameAr": "القانون والاستشارات القانونية",
+      "nameEn": "Legal Advisory",
+      "descriptionAr": "صياغة ومراجعة العقود، نزاعات العمل، والملكية الفكرية بواسطة محامين مقيدين.",
+      "descriptionEn": "Contracts drafting, labor law, and IP protection by licensed lawyers.",
+      "iconName": "Scale",
+      "requiresLicense": true,
+      "displayOrder": 3,
+      "isActive": true,
+      "subcategories": [
+        {
+          "id": "ssub-contracts",
+          "parentId": "scat-legal",
+          "slug": "commercial-contracts",
+          "nameAr": "صياغة العقود التجارية",
+          "nameEn": "Commercial Contracts",
+          "isActive": true
+        },
+        {
+          "id": "ssub-ip",
+          "parentId": "scat-legal",
+          "slug": "trademark-ip",
+          "nameAr": "العلامات التجارية والملكية الفكرية",
+          "nameEn": "Trademarks & IP",
+          "isActive": true
+        },
+        {
+          "id": "ssub-labor",
+          "parentId": "scat-legal",
+          "slug": "labor-law",
+          "nameAr": "قانون العمل المصري",
+          "nameEn": "Egyptian Labor Law",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "scat-management",
+      "slug": "management-business-dev",
+      "nameAr": "الإدارة وتطوير الأعمال",
+      "nameEn": "Management & Business Dev",
+      "descriptionAr": "خطط التوسع الاستراتيجية، إعادة الهيكلة الإدارية، ومؤشرات الأداء KPIs.",
+      "descriptionEn": "Strategic growth plans, organizational restructuring, and KPI frameworks.",
+      "iconName": "Briefcase",
+      "requiresLicense": false,
+      "displayOrder": 4,
+      "isActive": true,
+      "subcategories": [
+        {
+          "id": "ssub-strategy",
+          "parentId": "scat-management",
+          "slug": "growth-strategy",
+          "nameAr": "استراتيجيات النمو والتوسع",
+          "nameEn": "Growth Strategy",
+          "isActive": true
+        },
+        {
+          "id": "ssub-ops",
+          "parentId": "scat-management",
+          "slug": "sop-operations",
+          "nameAr": "بناء أدلة التشغيل SOPs",
+          "nameEn": "Operations & SOPs",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "scat-marketing",
+      "slug": "marketing-advertising",
+      "nameAr": "التسويق والإعلان",
+      "nameEn": "Marketing & Advertising",
+      "descriptionAr": "خطط التسويق الرقمي، إدارة الحملات الإعلانية الممولة، وبناء الهوية التجارية.",
+      "descriptionEn": "Digital marketing, paid acquisition campaigns, and brand positioning.",
+      "iconName": "Megaphone",
+      "requiresLicense": false,
+      "displayOrder": 5,
+      "isActive": true,
+      "subcategories": [
+        {
+          "id": "ssub-perf-ads",
+          "parentId": "scat-marketing",
+          "slug": "performance-ads",
+          "nameAr": "إعلانات الأداء الممولة",
+          "nameEn": "Performance Ads",
+          "isActive": true
+        },
+        {
+          "id": "ssub-brand-plan",
+          "parentId": "scat-marketing",
+          "slug": "marketing-plan",
+          "nameAr": "الخطط التسويقية الشاملة",
+          "nameEn": "Marketing Plans",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "scat-hr",
+      "slug": "hr-recruitment",
+      "nameAr": "الموارد البشرية والتوظيف",
+      "nameEn": "HR & Recruitment",
+      "descriptionAr": "هياكل الرواتب، لوائح الموارد البشرية، التأمينات الاجتماعية، وبرامج التقييم.",
+      "descriptionEn": "Compensation structures, HR policies, and talent acquisition.",
+      "iconName": "Users",
+      "requiresLicense": false,
+      "displayOrder": 6,
+      "isActive": true,
+      "subcategories": [
+        {
+          "id": "ssub-comp",
+          "parentId": "scat-hr",
+          "slug": "salary-grading",
+          "nameAr": "هيكلة الأجور والحوافز",
+          "nameEn": "Compensation & Grading",
+          "isActive": true
+        },
+        {
+          "id": "ssub-hr-policy",
+          "parentId": "scat-hr",
+          "slug": "hr-handbook",
+          "nameAr": "لوائح العمل والتأمينات",
+          "nameEn": "HR Handbooks",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "scat-ecommerce",
+      "slug": "ecommerce",
+      "nameAr": "التجارة الإلكترونية",
+      "nameEn": "E-Commerce",
+      "descriptionAr": "إطلاق المتاجر الإلكترونية، ربط بوابات الدفع المصرية، وتحسين معدلات التحويل.",
+      "descriptionEn": "Store launch, Egyptian payment gateways, and conversion optimization.",
+      "iconName": "ShoppingBag",
+      "requiresLicense": false,
+      "displayOrder": 7,
+      "isActive": true,
+      "subcategories": [
+        {
+          "id": "ssub-cro",
+          "parentId": "scat-ecommerce",
+          "slug": "conversion-audit",
+          "nameAr": "تحسين معدل التحويل CRO",
+          "nameEn": "Conversion Optimization",
+          "isActive": true
+        },
+        {
+          "id": "ssub-ecom-ops",
+          "parentId": "scat-ecommerce",
+          "slug": "ecom-launch",
+          "nameAr": "خطة إطلاق المتاجر والشحن",
+          "nameEn": "Store & Logistics Setup",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "scat-software",
+      "slug": "programming-it",
+      "nameAr": "البرمجة وتكنولوجيا المعلومات",
+      "nameEn": "Programming & IT",
+      "descriptionAr": "مراجعة المعمارية البرمجية، الأمن السيبراني، واختيار أنظمة ERP والسحابة.",
+      "descriptionEn": "Software architecture audits, cloud security, and ERP selection.",
+      "iconName": "Code",
+      "requiresLicense": false,
+      "displayOrder": 8,
+      "isActive": true,
+      "subcategories": [
+        {
+          "id": "ssub-arch",
+          "parentId": "scat-software",
+          "slug": "system-architecture",
+          "nameAr": "مراجعة معمارية الأنظمة",
+          "nameEn": "System Architecture",
+          "isActive": true
+        },
+        {
+          "id": "ssub-cloud-sec",
+          "parentId": "scat-software",
+          "slug": "cloud-security",
+          "nameAr": "أمن السحابة وتقليل التكاليف",
+          "nameEn": "Cloud & Security",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "scat-ai",
+      "slug": "ai-data-analytics",
+      "nameAr": "الذكاء الاصطناعي وتحليل البيانات",
+      "nameEn": "AI & Data Analytics",
+      "descriptionAr": "أتمتة العمليات بالذكاء الاصطناعي، بناء لوحات ذكاء الأعمال BI، وتوظيف النماذج الذكية.",
+      "descriptionEn": "AI workflow automation, BI dashboards, and enterprise LLM integration.",
+      "iconName": "Bot",
+      "requiresLicense": false,
+      "displayOrder": 9,
+      "isActive": true,
+      "subcategories": [
+        {
+          "id": "ssub-ai-agents",
+          "parentId": "scat-ai",
+          "slug": "ai-automation",
+          "nameAr": "أتمتة الأعمال بالذكاء الاصطناعي",
+          "nameEn": "AI Automation",
+          "isActive": true
+        },
+        {
+          "id": "ssub-bi",
+          "parentId": "scat-ai",
+          "slug": "bi-dashboards",
+          "nameAr": "تحليل البيانات ولوحات BI",
+          "nameEn": "Data & BI Analytics",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "scat-feasibility",
+      "slug": "entrepreneurship-feasibility",
+      "nameAr": "ريادة الأعمال ودراسات الجدوى",
+      "nameEn": "Entrepreneurship & Feasibility",
+      "descriptionAr": "دراسات الجدوى الاقتصادية والمالية البنكية، ونماذج عرض المستثمرين Pitch Decks.",
+      "descriptionEn": "Bankable feasibility studies, financial models, and investor pitch decks.",
+      "iconName": "Rocket",
+      "requiresLicense": false,
+      "displayOrder": 10,
+      "isActive": true,
+      "subcategories": [
+        {
+          "id": "ssub-feas",
+          "parentId": "scat-feasibility",
+          "slug": "feasibility-studies",
+          "nameAr": "دراسات الجدوى المعتمدة",
+          "nameEn": "Feasibility Studies",
+          "isActive": true
+        },
+        {
+          "id": "ssub-pitch",
+          "parentId": "scat-feasibility",
+          "slug": "pitch-deck",
+          "nameAr": "ملفات التمويل والمستثمرين",
+          "nameEn": "Investor Pitch Decks",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "scat-incorporation",
+      "slug": "company-incorporation",
+      "nameAr": "تأسيس الشركات",
+      "nameEn": "Company Incorporation",
+      "descriptionAr": "تأسيس الشركات بالهيئة العامة للاستثمار GAFI، السجل التجاري، وتعديل العقود.",
+      "descriptionEn": "GAFI company registration, commercial registry, and corporate charters.",
+      "iconName": "Building2",
+      "requiresLicense": true,
+      "displayOrder": 11,
+      "isActive": true,
+      "subcategories": [
+        {
+          "id": "ssub-llc",
+          "parentId": "scat-incorporation",
+          "slug": "llc-gafi",
+          "nameAr": "تأسيس شركات ذات مسؤولية محدودة",
+          "nameEn": "LLC Incorporation",
+          "isActive": true
+        },
+        {
+          "id": "ssub-jsc",
+          "parentId": "scat-incorporation",
+          "slug": "jsc-gafi",
+          "nameAr": "تأسيس شركات المساهمة والاستثمار",
+          "nameEn": "Joint-Stock Setup",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "scat-realestate",
+      "slug": "real-estate-investment",
+      "nameAr": "العقارات والاستثمار",
+      "nameEn": "Real Estate & Investment",
+      "descriptionAr": "تقييم الفرص العقارية في العاصمة الإدارية والمدن الجديدة، ومراجعة عقود التطوير.",
+      "descriptionEn": "Commercial & residential real estate evaluation and investment advisory.",
+      "iconName": "Home",
+      "requiresLicense": false,
+      "displayOrder": 12,
+      "isActive": true,
+      "subcategories": [
+        {
+          "id": "ssub-re-eval",
+          "parentId": "scat-realestate",
+          "slug": "re-valuation",
+          "nameAr": "التقييم العقاري ودراسة العائد",
+          "nameEn": "Real Estate Valuation",
+          "isActive": true
+        },
+        {
+          "id": "ssub-re-contract",
+          "parentId": "scat-realestate",
+          "slug": "re-due-diligence",
+          "nameAr": "الفحص القانوني والهندسي للعقار",
+          "nameEn": "Property Due Diligence",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "scat-engineering",
+      "slug": "engineering-design",
+      "nameAr": "الهندسة والتصميم",
+      "nameEn": "Engineering & Design",
+      "descriptionAr": "الاستشارات الهندسية والتراخيص، وتصميم تجربة المستخدم UI/UX والهوية البصرية.",
+      "descriptionEn": "Engineering licensing reviews and digital UI/UX & brand design.",
+      "iconName": "Compass",
+      "requiresLicense": true,
+      "displayOrder": 13,
+      "isActive": true,
+      "subcategories": [
+        {
+          "id": "ssub-eng-permit",
+          "parentId": "scat-engineering",
+          "slug": "engineering-permits",
+          "nameAr": "مراجعة الرسومات والتراخيص الهندسية",
+          "nameEn": "Engineering Permits",
+          "isActive": true
+        },
+        {
+          "id": "ssub-uiux",
+          "parentId": "scat-engineering",
+          "slug": "ui-ux-audit",
+          "nameAr": "تدقيق تجربة المستخدم UI/UX",
+          "nameEn": "UI/UX Design Audit",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "scat-education",
+      "slug": "education-training",
+      "nameAr": "التعليم والتدريب",
+      "nameEn": "Education & Training",
+      "descriptionAr": "تصميم الحقائب التدريبية للشركات، وتأهيل الفرق المهنية والاعتماد التدريبي.",
+      "descriptionEn": "Corporate training curricula design and workforce capability building.",
+      "iconName": "GraduationCap",
+      "requiresLicense": false,
+      "displayOrder": 14,
+      "isActive": true,
+      "subcategories": [
+        {
+          "id": "ssub-corp-train",
+          "parentId": "scat-education",
+          "slug": "corporate-training",
+          "nameAr": "تأهيل فرق العمل والمبيعات",
+          "nameEn": "Corporate Training",
+          "isActive": true
+        },
+        {
+          "id": "ssub-curriculum",
+          "parentId": "scat-education",
+          "slug": "curriculum-design",
+          "nameAr": "تصميم المناهج والحقائب التدريبية",
+          "nameEn": "Curriculum Design",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "scat-pmo",
+      "slug": "project-management",
+      "nameAr": "إدارة المشروعات",
+      "nameEn": "Project Management",
+      "descriptionAr": "تطبيق منهجيات PMP وAgile، خطط المخاطر، وتأسيس مكاتب إدارة المشروعات PMO.",
+      "descriptionEn": "PMP & Agile execution plans, risk matrices, and PMO establishment.",
+      "iconName": "Kanban",
+      "requiresLicense": false,
+      "displayOrder": 15,
+      "isActive": true,
+      "subcategories": [
+        {
+          "id": "ssub-pmo-setup",
+          "parentId": "scat-pmo",
+          "slug": "pmo-setup",
+          "nameAr": "إعداد خطة المشروع والجدول الزمني",
+          "nameEn": "Project Scheduling & Risk",
+          "isActive": true
+        },
+        {
+          "id": "ssub-agile",
+          "parentId": "scat-pmo",
+          "slug": "agile-coaching",
+          "nameAr": "التحول لمنهجية Agile",
+          "nameEn": "Agile Transformation",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "scat-import-export",
+      "slug": "import-export",
+      "nameAr": "الاستيراد والتصدير",
+      "nameEn": "Import & Export",
+      "descriptionAr": "إجراءات التسجيل المسبق للشحنات ACI، التخليص الجمركي، وخطط النفاذ للأسواق.",
+      "descriptionEn": "Egyptian ACI cargo compliance, customs tariffs, and export readiness.",
+      "iconName": "Globe",
+      "requiresLicense": false,
+      "displayOrder": 16,
+      "isActive": true,
+      "subcategories": [
+        {
+          "id": "ssub-aci",
+          "parentId": "scat-import-export",
+          "slug": "aci-compliance",
+          "nameAr": "استشارات منظومة ACI والجمارك",
+          "nameEn": "ACI & Customs",
+          "isActive": true
+        },
+        {
+          "id": "ssub-export-plan",
+          "parentId": "scat-import-export",
+          "slug": "export-strategy",
+          "nameAr": "خطة التصدير للأسواق العربية والأوروبية",
+          "nameEn": "Export Market Entry",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "scat-smes",
+      "slug": "smes-advisory",
+      "nameAr": "المشروعات الصغيرة والمتوسطة",
+      "nameEn": "SMEs Advisory",
+      "descriptionAr": "الاستفادة من قانون 152 لسنة 2020، الحوافز الضريبية المبسطة، وتمويل البنك المركزي.",
+      "descriptionEn": "Egyptian SME Law 152 incentives, simplified tax regimes, and financing.",
+      "iconName": "Store",
+      "requiresLicense": false,
+      "displayOrder": 17,
+      "isActive": true,
+      "subcategories": [
+        {
+          "id": "ssub-law152",
+          "parentId": "scat-smes",
+          "slug": "law-152-licensing",
+          "nameAr": "توفيق الأوضاع والحوافز (قانون 152)",
+          "nameEn": "Law 152 Incentives",
+          "isActive": true
+        },
+        {
+          "id": "ssub-sme-fin",
+          "parentId": "scat-smes",
+          "slug": "sme-banking",
+          "nameAr": "تجهيز ملف التمويل البنكي للمشروعات",
+          "nameEn": "SME Bank Financing",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "scat-agri-ind-log",
+      "slug": "agriculture-industry-logistics",
+      "nameAr": "الزراعة والصناعة واللوجستيات",
+      "nameEn": "Agriculture, Industry & Logistics",
+      "descriptionAr": "تراخيص التنمية الصناعية IDA، سلاسل الإمداد، واقتصاديات المشروعات الزراعية.",
+      "descriptionEn": "IDA industrial permits, supply chain optimization, and agribusiness feasibility.",
+      "iconName": "Factory",
+      "requiresLicense": false,
+      "displayOrder": 18,
+      "isActive": true,
+      "subcategories": [
+        {
+          "id": "ssub-ida",
+          "parentId": "scat-agri-ind-log",
+          "slug": "industrial-permits",
+          "nameAr": "التراخيص الصناعية وخطوط الإنتاج",
+          "nameEn": "Industrial Operations",
+          "isActive": true
+        },
+        {
+          "id": "ssub-supply",
+          "parentId": "scat-agri-ind-log",
+          "slug": "supply-chain",
+          "nameAr": "هيكلة سلاسل الإمداد والمستودعات",
+          "nameEn": "Supply Chain & Logistics",
+          "isActive": true
+        },
+        {
+          "id": "ssub-agri-eco",
+          "parentId": "scat-agri-ind-log",
+          "slug": "agribusiness",
+          "nameAr": "جدوى المشروعات الزراعية والتصديرية",
+          "nameEn": "Agribusiness Studies",
+          "isActive": true
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": "cat-srv-1",
+      "slug": "tax-audit-einvoicing-compliance",
+      "consultantId": "consultant-1",
+      "providerUserId": "user-consultant-1",
+      "providerName": "د. طارق السعيد العوضي",
+      "providerTitle": "مستشار ضرائب ومراجع حسابات قانوني مقيد",
+      "providerAvatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=350&q=80",
+      "providerVerified": true,
+      "categoryId": "scat-taxes",
+      "categoryNameAr": "الضرائب والاستشارات المالية",
+      "categoryNameEn": "Tax & Financial Advisory",
+      "subcategoryId": "ssub-einvoice",
+      "subcategoryNameAr": "منظومة الفاتورة الإلكترونية",
+      "subcategoryNameEn": "E-Invoicing Compliance",
+      "titleAr": "فحص ضريبي شامل ومطابقة منظومة الفاتورة والإيصال الإلكتروني",
+      "titleEn": "Comprehensive Tax Audit & E-Invoicing Compliance Review",
+      "shortDescriptionAr": "تدقيق كامل للموقف الضريبي، معالجة أخطاء الفاتورة الإلكترونية، وخطة تفادي التقدير الجزافي.",
+      "shortDescriptionEn": "Complete tax stance audit, e-invoice error resolution, and assessment defense plan.",
+      "fullDescriptionAr": "خدمة استشارية متكاملة موجهة لأصحاب الشركات والمنشآت التجارية في مصر لمراجعة الموقف الضريبي قبل الفحص الرسمي. نقوم بفحص تكويد الأصناف (GS1/EGS)، مطابقة إقرارات القيمة المضافة مع فواتير البورتال، وإعداد تقرير فني متكامل بالمعالجات المحاسبية والضريبية المطلوبة.",
+      "fullDescriptionEn": "End-to-end tax review for Egyptian businesses covering portal reconciliation, VAT filings, and compliance remediation.",
+      "imageUrl": "/src/assets/images/service_tax_finance_1794569785276.jpg",
+      "priceEgp": 2400,
+      "pricePiasters": 240000,
+      "executionDays": 3,
+      "deliveryMode": "online",
+      "revisionsCount": 2,
+      "includedAr": [
+        "فحص آخر 3 إقرارات قيمة مضافة ومطابقتها مع البورتال",
+        "تقرير مكتوب بالأخطاء ومصفوفة المخاطر الضريبية",
+        "جلسة فيديو 60 دقيقة لشرح التقرير والإجابة على الاستفسارات",
+        "خطة تصحيح الأكواد والربط مع مصلحة الضرائب"
+      ],
+      "excludedAr": [
+        "الرسوم الحكومية أو غرامات التأخير المستحقة لمصلحة الضرائب",
+        "الحضور الميداني أمام لجان الطعن الضريبي (يتطلب توكيلاً منفصلاً)"
+      ],
+      "prerequisitesAr": [
+        "آخر إقرار ضريبي مقدم (PDF)",
+        "كشف تصدير فواتير الشهور الثلاثة الأخيرة من البورتال",
+        "صورة البطاقة الضريبية السارية"
+      ],
+      "deliverablesAr": [
+        "تقرير التدقيق الضريبي الشامل (PDF)",
+        "ملف تسوية الفروق الضريبية (Excel)"
+      ],
+      "milestones": [
+        {
+          "id": "m1",
+          "stepNumber": 1,
+          "titleAr": "استلام المستندات والفحص المبدئي",
+          "titleEn": "Document Intake & Audit",
+          "descriptionAr": "مراجعة الإقرارات وكشوف البورتال وتحديد الفجوات.",
+          "durationDays": 1
+        },
+        {
+          "id": "m2",
+          "stepNumber": 2,
+          "titleAr": "إعداد تقرير المعالجة والمطابقة",
+          "titleEn": "Reconciliation Report",
+          "descriptionAr": "حساب الفروق وصياغة خطة المعالجة القانونية.",
+          "durationDays": 1
+        },
+        {
+          "id": "m3",
+          "stepNumber": 3,
+          "titleAr": "تسليم التقرير وجلسة المراجعة",
+          "titleEn": "Delivery & Live Walkthrough",
+          "descriptionAr": "تسليم الملفات النهائية ومناقشتها عبر جلسة فيديو.",
+          "durationDays": 1
+        }
+      ],
+      "faqs": [
+        {
+          "id": "f1",
+          "questionAr": "هل تشمل الخدمة ملفات الفاتورة والإيصال معاً؟",
+          "questionEn": "Does it cover both E-Invoice and E-Receipt?",
+          "answerAr": "نعم، يتم فحص تكويد ومطابقة الفاتورة الإلكترونية والإيصال الإلكتروني وفق النشاط.",
+          "answerEn": "Yes, both are audited based on your business activity."
+        },
+        {
+          "id": "f2",
+          "questionAr": "كيف تضمنون سرية البيانات المالية؟",
+          "questionEn": "How is financial data confidentiality protected?",
+          "answerAr": "تخضع جميع المرفقات لاتفاقية عدم إفشاء رقمية ولا يتم تداولها خارج مساحة الطلب.",
+          "answerEn": "All files remain confidential inside the encrypted order workspace."
+        }
+      ],
+      "packages": [
+        {
+          "id": "pkg-1-std",
+          "nameAr": "الباقة الأساسية (شركة فردية)",
+          "nameEn": "Starter",
+          "priceEgp": 2400,
+          "executionDays": 3,
+          "revisionsCount": 2,
+          "featuresAr": [
+            "فحص 3 أشهر",
+            "تقرير المخاطر",
+            "جلسة 60 دقيقة"
+          ]
+        },
+        {
+          "id": "pkg-1-pro",
+          "nameAr": "الباقة المتقدمة (شركة أموال)",
+          "nameEn": "Corporate",
+          "priceEgp": 4200,
+          "executionDays": 5,
+          "revisionsCount": 3,
+          "featuresAr": [
+            "فحص سنة مالية كاملة",
+            "مذكرة دفاع فنية",
+            "جلستا متابعة"
+          ]
+        }
+      ],
+      "tags": [
+        "ضرائب",
+        "الفاتورة الإلكترونية",
+        "القيمة المضافة",
+        "مراجعة مالية"
+      ],
+      "requiresLicense": true,
+      "isFeatured": true,
+      "isRecommended": true,
+      "isDemo": true,
+      "status": "published",
+      "rating": 4.95,
+      "reviewCount": 34,
+      "ordersCount": 48,
+      "createdAt": "2026-02-10T09:00:00Z",
+      "updatedAt": "2026-03-18T11:00:00Z",
+      "deletedAt": null
+    },
+    {
+      "id": "cat-srv-2",
+      "slug": "gafi-company-incorporation-charter",
+      "consultantId": "consultant-2",
+      "providerUserId": "user-c2",
+      "providerName": "المستشارة نهال عبد الحميد",
+      "providerTitle": "محامية بالاستئناف العالي ومستشارة تأسيس شركات",
+      "providerAvatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=350&q=80",
+      "providerVerified": true,
+      "categoryId": "scat-incorporation",
+      "categoryNameAr": "تأسيس الشركات",
+      "categoryNameEn": "Company Incorporation",
+      "subcategoryId": "ssub-llc",
+      "subcategoryNameAr": "تأسيس شركات ذات مسؤولية محدودة",
+      "subcategoryNameEn": "LLC Incorporation",
+      "titleAr": "صياغة عقد التأسيس واستيفاء ملف الهيئة العامة للاستثمار GAFI",
+      "titleEn": "GAFI LLC Incorporation & Founders Agreement Package",
+      "shortDescriptionAr": "إعداد عقد الشركة والنظام الأساسي واتفاقية الشركاء وتجهيز كامل ملف التأسيس بالهيئة.",
+      "shortDescriptionEn": "Complete drafting of articles of association, shareholders agreement, and GAFI dossier.",
+      "fullDescriptionAr": "باقة قانونية متخصصة لتأسيس الشركات ذات المسؤولية المحدودة أو شركة الشخص الواحد في مصر بدون ثغرات مستقبلية بين الشركاء. تتضمن مراجعة الاسم التجاري، تحديد الأغراض المتوافقة مع التصنيف المصري، صياغة بنود التخارج والإدارة والتوقيع البنكي.",
+      "fullDescriptionEn": "Comprehensive legal incorporation advisory covering founders rights, management powers, and GAFI filing readiness.",
+      "imageUrl": "/src/assets/images/service_legal_incorporation_1794569787053.jpg",
+      "priceEgp": 3200,
+      "pricePiasters": 320000,
+      "executionDays": 4,
+      "deliveryMode": "both",
+      "revisionsCount": 3,
+      "includedAr": [
+        "صياغة مسودة عقد التأسيس والنظام الأساسي",
+        "اتفاقية شركاء (Shareholders Agreement) لحماية الحصص",
+        "مراجعة النشاط والأكواد المطلوبة قبل التوجه للهيئة",
+        "جلسة استشارية أونلاين أو بمقر المكتب في الدقي"
+      ],
+      "excludedAr": [
+        "رسوم الشهر العقاري والغرفة التجارية وهيئة الاستثمار الحكومية",
+        "رسوم استخراج التراخيص القطاعية الخاصة (مثل السياحة أو الأدوية)"
+      ],
+      "prerequisitesAr": [
+        "بيانات الشركاء وأرقام البطاقات الشخصية",
+        "3 أسماء تجارية مقترحة بالترتيب",
+        "وصف تفصيلي للنشاط ومقر الشركة المقترح"
+      ],
+      "deliverablesAr": [
+        "عقد التأسيس بصيغة Word و PDF جاهز للاعتماد",
+        "اتفاقية الشركاء باللغتين العربية والإنجليزية",
+        "دليل خطوات الإيداع البنكي والسجل التجاري"
+      ],
+      "milestones": [
+        {
+          "id": "m1",
+          "stepNumber": 1,
+          "titleAr": "تحديد الشكل القانوني وبنود الشراكة",
+          "titleEn": "Structure Scoping",
+          "descriptionAr": "جلسة جمع المتطلبات وتحديد هيكل الملكية والإدارة.",
+          "durationDays": 1
+        },
+        {
+          "id": "m2",
+          "stepNumber": 2,
+          "titleAr": "صياغة العقود ومراجعتها",
+          "titleEn": "Legal Drafting",
+          "descriptionAr": "كتابة عقد التأسيس واتفاقية الشركاء ومراجعة التعديلات.",
+          "durationDays": 2
+        },
+        {
+          "id": "m3",
+          "stepNumber": 3,
+          "titleAr": "اعتماد الملف النهائي وقائمة التنفيذ",
+          "titleEn": "Final Dossier Handover",
+          "descriptionAr": "تسليم العقود النهائية وجدول إجراءات GAFI.",
+          "durationDays": 1
+        }
+      ],
+      "faqs": [
+        {
+          "id": "f1",
+          "questionAr": "ما الحد الأدنى لرأس مال الشركة ذات المسؤولية المحدودة؟",
+          "questionEn": "What is the minimum capital for an LLC?",
+          "answerAr": "وفق القانون المصري لا يشترط حد أدنى مرتفع لرأس المال إلا لبعض الأنشطة التصديرية أو الخاصة، ونحدد ذلك بدقة حسب نشاطك.",
+          "answerEn": "We tailor the capital structure according to Egyptian GAFI rules and your activity."
+        }
+      ],
+      "tags": [
+        "تأسيس شركات",
+        "GAFI",
+        "عقود شركاء",
+        "قانون الشركات"
+      ],
+      "requiresLicense": true,
+      "isFeatured": true,
+      "isRecommended": true,
+      "isDemo": true,
+      "status": "published",
+      "rating": 4.92,
+      "reviewCount": 27,
+      "ordersCount": 39,
+      "createdAt": "2026-02-14T10:00:00Z",
+      "updatedAt": "2026-03-19T09:30:00Z",
+      "deletedAt": null
+    },
+    {
+      "id": "cat-srv-3",
+      "slug": "ai-workflow-automation-architecture",
+      "consultantId": "consultant-3",
+      "providerUserId": "user-c3",
+      "providerName": "المهندس كريم الشاذلي",
+      "providerTitle": "استشاري معمارية النظم والذكاء الاصطناعي",
+      "providerAvatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=350&q=80",
+      "providerVerified": true,
+      "categoryId": "scat-ai",
+      "categoryNameAr": "الذكاء الاصطناعي وتحليل البيانات",
+      "categoryNameEn": "AI & Data Analytics",
+      "subcategoryId": "ssub-ai-agents",
+      "subcategoryNameAr": "أتمتة الأعمال بالذكاء الاصطناعي",
+      "subcategoryNameEn": "AI Automation",
+      "titleAr": "تصميم خريطة أتمتة العمليات ودمج وكلاء الذكاء الاصطناعي للشركات",
+      "titleEn": "Enterprise AI Automation & Workflow Architecture Blueprint",
+      "shortDescriptionAr": "دراسة العمليات اليومية وتصميم منظومة ذكاء اصطناعي آمنة لخدمة العملاء والمبيعات.",
+      "shortDescriptionEn": "Audit daily workflows and architect a secure AI automation blueprint for support and sales.",
+      "fullDescriptionAr": "خدمة هندسية واستشارية تساعد الشركات ومتاجر التجزئة على تقليل الأعمال اليدوية بنسبة تتجاوز 40% عبر دمج نماذج الذكاء الاصطناعي التوليدي وربط أنظمة CRM وERP مع ضمان حماية خصوصية بيانات العملاء.",
+      "fullDescriptionEn": "Technical consulting service delivering architecture diagrams, ROI estimates, and secure LLM integration roadmaps.",
+      "imageUrl": "/src/assets/images/service_ai_software_1794569786325.jpg",
+      "priceEgp": 3800,
+      "pricePiasters": 380000,
+      "executionDays": 5,
+      "deliveryMode": "online",
+      "revisionsCount": 2,
+      "includedAr": [
+        "تحليل 3 مسارات عمل تشغيلية قابلة للأتمتة",
+        "مخطط المعمارية التقنية وأمن البيانات (Architecture Blueprint)",
+        "تقدير التكلفة الشهرية للنماذج والخوادم بالجنيه/الدولار",
+        "عرض تجريبي لنموذج الأولوية (POC Specification)"
+      ],
+      "excludedAr": [
+        "البرمجة التنفيذية الكاملة أو اشتراكات الخوادم السحابية"
+      ],
+      "prerequisitesAr": [
+        "وصف الأدوات والأنظمة المستخدمة حالياً (CRM / Excel / WhatsApp)",
+        "تحديد أكثر قسم يستغرق وقتاً يدوياً في الشركة"
+      ],
+      "deliverablesAr": [
+        "مستند المعمارية التقنية الكامل (PDF)",
+        "خريطة تنفيذ لمدة 60 يوماً"
+      ],
+      "milestones": [
+        {
+          "id": "m1",
+          "stepNumber": 1,
+          "titleAr": "جلسة اكتشاف العمليات",
+          "titleEn": "Process Discovery",
+          "descriptionAr": "مقابلة تقنية لفهم تدفق البيانات والأنظمة.",
+          "durationDays": 1
+        },
+        {
+          "id": "m2",
+          "stepNumber": 2,
+          "titleAr": "هندسة الحل واختيار الأدوات",
+          "titleEn": "Solution Design",
+          "descriptionAr": "تصميم التكامل والأمان وتقدير العائد.",
+          "durationDays": 3
+        },
+        {
+          "id": "m3",
+          "stepNumber": 3,
+          "titleAr": "العرض النهائي والتسليم",
+          "titleEn": "Blueprint Handover",
+          "descriptionAr": "مراجعة الخطة مع فريق التقنية لديك.",
+          "durationDays": 1
+        }
+      ],
+      "faqs": [
+        {
+          "id": "f1",
+          "questionAr": "هل أحتاج فريق برمجة داخلي لتنفيذ الخطة؟",
+          "questionEn": "Do I need an internal dev team?",
+          "answerAr": "نقترح خيارات No-Code مثل n8n أو حلول برمجية مخصصة حسب ميزانيتك وحجم شركتك.",
+          "answerEn": "We provide both low-code and custom engineering paths tailored to your budget."
+        }
+      ],
+      "tags": [
+        "ذكاء اصطناعي",
+        "أتمتة",
+        "تحليل بيانات",
+        "برمجة"
+      ],
+      "requiresLicense": false,
+      "isFeatured": true,
+      "isRecommended": true,
+      "isDemo": true,
+      "status": "published",
+      "rating": 4.98,
+      "reviewCount": 29,
+      "ordersCount": 42,
+      "createdAt": "2026-02-18T12:00:00Z",
+      "updatedAt": "2026-03-20T14:00:00Z",
+      "deletedAt": null
+    },
+    {
+      "id": "cat-srv-4",
+      "slug": "ecommerce-cro-growth-audit",
+      "consultantId": "consultant-4",
+      "providerUserId": "user-c4",
+      "providerName": "أ. هالة مرزوق",
+      "providerTitle": "استشارية نمو وتسويق تجارة إلكترونية",
+      "providerAvatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=350&q=80",
+      "providerVerified": true,
+      "categoryId": "scat-ecommerce",
+      "categoryNameAr": "التجارة الإلكترونية",
+      "categoryNameEn": "E-Commerce",
+      "subcategoryId": "ssub-cro",
+      "subcategoryNameAr": "تحسين معدل التحويل CRO",
+      "subcategoryNameEn": "Conversion Optimization",
+      "titleAr": "تدقيق شامل للمتجر الإلكتروني وخطة مضاعفة معدل الشراء (CRO)",
+      "titleEn": "Full E-Commerce Store & Conversion Rate Optimization Audit",
+      "shortDescriptionAr": "فحص تجربة الشراء، سرعة الصفحات، هيكلة سلة الدفع، وخطة خفض المرتجعات في مصر.",
+      "shortDescriptionEn": "Audit checkout funnel, product pages, COD return reduction, and ad landing experience.",
+      "fullDescriptionAr": "مراجعة عملية ومبنية على الأرقام لمتجرك الإلكتروني لاكتشاف أسباب تسرب العملاء قبل إتمام الدفع. تغطي الخدمة صفحات المنتج، خيارات الدفع عند الاستلام والدفع الإلكتروني، وهيكلة العروض لرفع متوسط قيمة الطلب (AOV).",
+      "fullDescriptionEn": "Data-driven conversion optimization audit covering product UX, cart abandonment recovery, and Egyptian COD/online checkout flows.",
+      "imageUrl": "/src/assets/images/service_marketing_ecommerce_1794569787138.jpg",
+      "priceEgp": 1950,
+      "pricePiasters": 195000,
+      "executionDays": 3,
+      "deliveryMode": "online",
+      "revisionsCount": 2,
+      "includedAr": [
+        "فيديو تحليلي مسجل (30 دقيقة) لمسار الشراء في متجرك",
+        "قائمة بـ 20+ نقطة تحسين قابلة للتنفيذ الفوري",
+        "خطة تقليل مرتجعات الدفع عند الاستلام (COD)",
+        "جلسة مناقشة مباشرة 45 دقيقة"
+      ],
+      "excludedAr": [
+        "تعديل الأكواد البرمجية على منصة المتجر أو إدارة الإعلانات الشهرية"
+      ],
+      "prerequisitesAr": [
+        "رابط المتجر الإلكتروني",
+        "صلاحية قراءة لتقارير Google Analytics أو أرقام المبيعات التقريبية"
+      ],
+      "deliverablesAr": [
+        "تقرير تدقيق تجربة المتجر CRO (PDF)",
+        "جدول أولويات التطوير السريعة"
+      ],
+      "milestones": [
+        {
+          "id": "m1",
+          "stepNumber": 1,
+          "titleAr": "فحص تجربة العميل والبيانات",
+          "titleEn": "Funnel Inspection",
+          "descriptionAr": "تحليل سلة المشتريات وصفحات الهبوط.",
+          "durationDays": 2
+        },
+        {
+          "id": "m2",
+          "stepNumber": 2,
+          "titleAr": "تسليم التوصيات والجلسة",
+          "titleEn": "Action Plan Delivery",
+          "descriptionAr": "تقديم قائمة التحسينات ذات الأثر الأعلى.",
+          "durationDays": 1
+        }
+      ],
+      "faqs": [
+        {
+          "id": "f1",
+          "questionAr": "هل تناسب الخدمة متاجر شوبيفاي وسلة وووكومرس؟",
+          "questionEn": "Does it work for Shopify, Salla, and WooCommerce?",
+          "answerAr": "نعم، المنهجية تغطي كافة منصات التجارة الإلكترونية الشائعة في السوق المصري.",
+          "answerEn": "Yes, it applies to Shopify, WooCommerce, Salla, ZID, and custom stores."
+        }
+      ],
+      "tags": [
+        "تجارة إلكترونية",
+        "تسويق",
+        "زيادة المبيعات",
+        "متاجر"
+      ],
+      "requiresLicense": false,
+      "isFeatured": true,
+      "isRecommended": true,
+      "isDemo": true,
+      "status": "published",
+      "rating": 4.89,
+      "reviewCount": 22,
+      "ordersCount": 31,
+      "createdAt": "2026-02-22T15:00:00Z",
+      "updatedAt": "2026-03-15T10:00:00Z",
+      "deletedAt": null
+    },
+    {
+      "id": "cat-srv-5",
+      "slug": "bankable-feasibility-study-roi",
+      "consultantId": "consultant-5",
+      "providerUserId": "user-c5",
+      "providerName": "أ.د. عصام عبد الرحمن",
+      "providerTitle": "خبير دراسات الجدوى والاستثمار العقاري والتجاري",
+      "providerAvatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=350&q=80",
+      "providerVerified": true,
+      "categoryId": "scat-feasibility",
+      "categoryNameAr": "ريادة الأعمال ودراسات الجدوى",
+      "categoryNameEn": "Entrepreneurship & Feasibility",
+      "subcategoryId": "ssub-feas",
+      "subcategoryNameAr": "دراسات الجدوى المعتمدة",
+      "subcategoryNameEn": "Feasibility Studies",
+      "titleAr": "دراسة جدوى مالية واقتصادية معتمدة للبنوك والمستثمرين (3-5 سنوات)",
+      "titleEn": "Bankable Financial & Economic Feasibility Study (3-5 Years)",
+      "shortDescriptionAr": "نموذج مالي متكامل مع حساب IRR وNPV ونقطة التعادل وتحليل الحساسية للتضخم وسعر الصرف.",
+      "shortDescriptionEn": "Full financial model with IRR, NPV, break-even, and inflation sensitivity scenarios.",
+      "fullDescriptionAr": "دراسة جدوى احترافية مصممة وفق معايير البنوك المصرية وصناديق الاستثمار. تشمل تقدير التكاليف الرأسمالية والتشغيلية، هيكل التمويل، قائمة الدخل والتدفقات النقدية المتوقعة لمدة 5 سنوات، واختبار سيناريوهات التغير في الأسعار.",
+      "fullDescriptionEn": "Bank-grade feasibility study covering CapEx, OpEx, 5-year cash flows, and macroeconomic sensitivity.",
+      "imageUrl": "/src/assets/images/service_feasibility_realestate_1794569787205.jpg",
+      "priceEgp": 5500,
+      "pricePiasters": 550000,
+      "executionDays": 7,
+      "deliveryMode": "both",
+      "revisionsCount": 3,
+      "includedAr": [
+        "ملف إكسيل ديناميكي مفتوح المعادلات لـ 5 سنوات",
+        "حساب مؤشرات IRR و NPV وفترة الاسترداد ونقطة التعادل",
+        "ملخص تنفيذي احترافي باللغة العربية أو الإنجليزية",
+        "جلستا مراجعة وتعديل للمعطيات المالية"
+      ],
+      "excludedAr": [
+        "الأبحاث الميدانية المخصصة أو الرسومات الهندسية التنفيذية"
+      ],
+      "prerequisitesAr": [
+        "فكرة المشروع وحجم الاستثمار المبدئي",
+        "عروض أسعار مبدئية للمعدات أو الإيجارات إن وجدت"
+      ],
+      "deliverablesAr": [
+        "النموذج المالي الكامل (Excel)",
+        "وثيقة دراسة الجدوى النهائية (PDF + Word)"
+      ],
+      "milestones": [
+        {
+          "id": "m1",
+          "stepNumber": 1,
+          "titleAr": "جمع البيانات وتحديد الافتراضات",
+          "titleEn": "Assumptions Gathering",
+          "descriptionAr": "تثبيت مدخلات السوق والتكاليف وطاقة التشغيل.",
+          "durationDays": 2
+        },
+        {
+          "id": "m2",
+          "stepNumber": 2,
+          "titleAr": "بناء النموذج المالي وتحليل الحساسية",
+          "titleEn": "Financial Modeling",
+          "descriptionAr": "بناء الجداول وحساب مؤشرات العائد والمخاطر.",
+          "durationDays": 3
+        },
+        {
+          "id": "m3",
+          "stepNumber": 3,
+          "titleAr": "المراجعة والاعتماد النهائي",
+          "titleEn": "Final Review",
+          "descriptionAr": "إجراء التعديلات وتسليم النسخة المعتمدة.",
+          "durationDays": 2
+        }
+      ],
+      "faqs": [
+        {
+          "id": "f1",
+          "questionAr": "هل تقبل البنوك المصرية هذه الدراسة ضمن ملف التمويل؟",
+          "questionEn": "Is it aligned with Egyptian bank templates?",
+          "answerAr": "نعم، الدراسة مصممة وفق مؤشرات الكفاءة المالية المطلوبة لدى البنوك المصرية ومبادرات المشروعات.",
+          "answerEn": "Yes, it includes all standard banking credit and return ratios."
+        }
+      ],
+      "tags": [
+        "دراسة جدوى",
+        "تمويل",
+        "استثمار",
+        "مشروعات"
+      ],
+      "requiresLicense": false,
+      "isFeatured": true,
+      "isRecommended": true,
+      "isDemo": true,
+      "status": "published",
+      "rating": 4.97,
+      "reviewCount": 41,
+      "ordersCount": 54,
+      "createdAt": "2026-02-05T08:00:00Z",
+      "updatedAt": "2026-03-21T12:00:00Z",
+      "deletedAt": null
+    },
+    {
+      "id": "cat-srv-6",
+      "slug": "financial-statements-sme-audit",
+      "consultantId": "consultant-1",
+      "providerUserId": "user-consultant-1",
+      "providerName": "د. طارق السعيد العوضي",
+      "providerTitle": "مستشار ضرائب ومراجع حسابات قانوني مقيد",
+      "providerAvatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=350&q=80",
+      "providerVerified": true,
+      "categoryId": "scat-accounting",
+      "categoryNameAr": "المحاسبة والمراجعة",
+      "categoryNameEn": "Accounting & Auditing",
+      "subcategoryId": "ssub-fin-stmt",
+      "subcategoryNameAr": "إعداد القوائم المالية",
+      "subcategoryNameEn": "Financial Statements",
+      "titleAr": "إعداد ومراجعة القوائم المالية السنوية وفق معايير المحاسبة المصرية",
+      "titleEn": "Annual Financial Statements Preparation & Audit (EAS)",
+      "shortDescriptionAr": "إعداد قائمة المركز المالي والدخل والتدفقات النقدية والإيضاحات المتممة للشركات.",
+      "shortDescriptionEn": "Prepare balance sheet, P&L, cash flow statements, and disclosures under Egyptian Accounting Standards.",
+      "fullDescriptionAr": "نقدم خدمة إعداد ومراجعة القوائم المالية الختامية للشركات والمؤسسات وفقاً لمعايير المحاسبة المصرية المحدثة، بما يدعم متطلبات المساهمين والبنوك ومصلحة الضرائب.",
+      "fullDescriptionEn": "Full annual financial close and statement compilation compliant with Egyptian Accounting Standards.",
+      "imageUrl": "/src/assets/images/service_tax_finance_1794569785276.jpg",
+      "priceEgp": 4500,
+      "pricePiasters": 450000,
+      "executionDays": 6,
+      "deliveryMode": "both",
+      "revisionsCount": 2,
+      "includedAr": [
+        "ميزان المراجعة المعدل والتسويات الجردية",
+        "القوائم المالية الأربع والإيضاحات المتممة",
+        "تقرير ملاحظات على الرقابة الداخلية"
+      ],
+      "excludedAr": [
+        "أعمال الإدخال اليومي للفواتير عن شهور سابقة غير مقيدة"
+      ],
+      "prerequisitesAr": [
+        "ميزان المراجعة الأولي وأرصدة البنوك والمخزون"
+      ],
+      "deliverablesAr": [
+        "ملف القوائم المالية الكامل (PDF + Excel)"
+      ],
+      "milestones": [
+        {
+          "id": "m1",
+          "stepNumber": 1,
+          "titleAr": "مراجعة ميزان المراجعة والتسويات",
+          "titleEn": "Trial Balance Review",
+          "descriptionAr": "فحص الأرصدة والمصروفات والإهلاكات.",
+          "durationDays": 3
+        },
+        {
+          "id": "m2",
+          "stepNumber": 2,
+          "titleAr": "إصدار القوائم المالية النهائية",
+          "titleEn": "Statements Finalization",
+          "descriptionAr": "إعداد القوائم ومراجعتها مع الإدارة.",
+          "durationDays": 3
+        }
+      ],
+      "faqs": [],
+      "tags": [
+        "محاسبة",
+        "قوائم مالية",
+        "مراجعة",
+        "شركات"
+      ],
+      "requiresLicense": true,
+      "isFeatured": false,
+      "isRecommended": true,
+      "isDemo": true,
+      "status": "published",
+      "rating": 4.91,
+      "reviewCount": 16,
+      "ordersCount": 22,
+      "createdAt": "2026-02-25T10:00:00Z",
+      "updatedAt": "2026-03-10T10:00:00Z",
+      "deletedAt": null
+    },
+    {
+      "id": "cat-srv-7",
+      "slug": "commercial-contracts-legal-review",
+      "consultantId": "consultant-2",
+      "providerUserId": "user-c2",
+      "providerName": "المستشارة نهال عبد الحميد",
+      "providerTitle": "محامية بالاستئناف العالي ومستشارة تأسيس شركات",
+      "providerAvatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=350&q=80",
+      "providerVerified": true,
+      "categoryId": "scat-legal",
+      "categoryNameAr": "القانون والاستشارات القانونية",
+      "categoryNameEn": "Legal Advisory",
+      "subcategoryId": "ssub-contracts",
+      "subcategoryNameAr": "صياغة العقود التجارية",
+      "subcategoryNameEn": "Commercial Contracts",
+      "titleAr": "صياغة ومراجعة العقود التجارية وعقود العمل وحماية الحقوق القانونية",
+      "titleEn": "Commercial & Employment Contract Drafting and Legal Audit",
+      "shortDescriptionAr": "مراجعة دقيقة للبنود الجزائية والالتزامات التعاقدية وفق القانون المدني والتجاري المصري.",
+      "shortDescriptionEn": "Thorough contract audit and drafting aligned with Egyptian commercial and labor laws.",
+      "fullDescriptionAr": "سواء كنت توقع عقد توريد، شراكة، وكالة تجارية، أو توظيف قيادي، تقوم المستشارة بمراجعة كل بند وكشف الثغرات وصياغة بدائل قانونية تحمي مركزك المالي والقانوني.",
+      "fullDescriptionEn": "Protective contract drafting and redlining for commercial partnerships, vendor agreements, and executive employment.",
+      "imageUrl": "/src/assets/images/service_legal_incorporation_1794569787053.jpg",
+      "priceEgp": 1600,
+      "pricePiasters": 160000,
+      "executionDays": 2,
+      "deliveryMode": "online",
+      "revisionsCount": 2,
+      "includedAr": [
+        "مراجعة أو صياغة عقد حتى 12 صفحة",
+        "تقرير بالملاحظات والمخاطر القانونية",
+        "جلسة استشارية لشرح التعديلات المقترحة"
+      ],
+      "excludedAr": [
+        "رفع الدعاوى القضائية أو التمثيل أمام المحاكم"
+      ],
+      "prerequisitesAr": [
+        "مسودة العقد الحالية أو ملخص شروط الاتفاق"
+      ],
+      "deliverablesAr": [
+        "نسخة العقد المعدلة بالصياغة المحكمة (Word + PDF)"
+      ],
+      "milestones": [
+        {
+          "id": "m1",
+          "stepNumber": 1,
+          "titleAr": "قراءة وتدقيق البنود",
+          "titleEn": "Clause Audit",
+          "descriptionAr": "رصد الثغرات وتحديد الالتزامات.",
+          "durationDays": 1
+        },
+        {
+          "id": "m2",
+          "stepNumber": 2,
+          "titleAr": "الصياغة النهائية والتسليم",
+          "titleEn": "Final Redline",
+          "descriptionAr": "تسليم النسخة المعدلة ومناقشتها.",
+          "durationDays": 1
+        }
+      ],
+      "faqs": [],
+      "tags": [
+        "عقود",
+        "محاماة",
+        "استشارات قانونية",
+        "قانون العمل"
+      ],
+      "requiresLicense": true,
+      "isFeatured": false,
+      "isRecommended": true,
+      "isDemo": true,
+      "status": "published",
+      "rating": 4.94,
+      "reviewCount": 19,
+      "ordersCount": 28,
+      "createdAt": "2026-03-01T11:00:00Z",
+      "updatedAt": "2026-03-19T11:00:00Z",
+      "deletedAt": null
+    },
+    {
+      "id": "cat-srv-8",
+      "slug": "performance-marketing-funnel-plan",
+      "consultantId": "consultant-4",
+      "providerUserId": "user-c4",
+      "providerName": "أ. هالة مرزوق",
+      "providerTitle": "استشارية نمو وتسويق تجارة إلكترونية",
+      "providerAvatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=350&q=80",
+      "providerVerified": true,
+      "categoryId": "scat-marketing",
+      "categoryNameAr": "التسويق والإعلان",
+      "categoryNameEn": "Marketing & Advertising",
+      "subcategoryId": "ssub-perf-ads",
+      "subcategoryNameAr": "إعلانات الأداء الممولة",
+      "subcategoryNameEn": "Performance Ads",
+      "titleAr": "بناء استراتيجية الحملات الإعلانية الممولة وتوزيع الميزانية (Meta & Google)",
+      "titleEn": "Paid Media Strategy & Budget Allocation Plan (Meta & Google)",
+      "shortDescriptionAr": "خطة إعلانية كاملة لخفض تكلفة العميل CAC وتحديد شرائح الاستهداف والرسائل البيعية.",
+      "shortDescriptionEn": "Performance marketing plan to reduce CAC with audience targeting and creative angles.",
+      "fullDescriptionAr": "خطة عملية لرواد الأعمال والعلامات التجارية في مصر لبناء مسار إعلاني مربح على Meta وTikTok وGoogle Ads مع جدول اختبارات A/B ومؤشرات قياس العائد ROAS.",
+      "fullDescriptionEn": "Actionable paid media roadmap with funnel stages, creative testing matrix, and ROAS targets.",
+      "imageUrl": "/src/assets/images/service_marketing_ecommerce_1794569787138.jpg",
+      "priceEgp": 2100,
+      "pricePiasters": 210000,
+      "executionDays": 4,
+      "deliveryMode": "online",
+      "revisionsCount": 2,
+      "includedAr": [
+        "خطة توزيع الميزانية الإعلانية لـ 90 يوماً",
+        "تعريف 4 شرائح جمهور مستهدف ورسائل الإعلانات",
+        "قائمة فحص البيكسل والتتبع (Tracking Checklist)"
+      ],
+      "excludedAr": [
+        "تكلفة الإعلانات المدفوعة للمنصات أو تصميم الفيديوهات الإعلانية"
+      ],
+      "prerequisitesAr": [
+        "حسابات الإعلانات الحالية أو بيانات المنتج والجمهور"
+      ],
+      "deliverablesAr": [
+        "وثيقة الخطة الإعلانية الكاملة + جدول KPIs"
+      ],
+      "milestones": [
+        {
+          "id": "m1",
+          "stepNumber": 1,
+          "titleAr": "تدقيق الحسابات السابقة والمنافسين",
+          "titleEn": "Ad Account Audit",
+          "descriptionAr": "مراجعة الأداء الحالي وتحديد نقاط الهدر.",
+          "durationDays": 2
+        },
+        {
+          "id": "m2",
+          "stepNumber": 2,
+          "titleAr": "تسليم خطة الإطلاق والاختبار",
+          "titleEn": "Media Plan Delivery",
+          "descriptionAr": "تقديم خطة الميزانية والرسائل.",
+          "durationDays": 2
+        }
+      ],
+      "faqs": [],
+      "tags": [
+        "تسويق رقمي",
+        "إعلانات ممولة",
+        "ميتا",
+        "جوجل"
+      ],
+      "requiresLicense": false,
+      "isFeatured": false,
+      "isRecommended": true,
+      "isDemo": true,
+      "status": "published",
+      "rating": 4.86,
+      "reviewCount": 15,
+      "ordersCount": 24,
+      "createdAt": "2026-03-03T14:00:00Z",
+      "updatedAt": "2026-03-14T14:00:00Z",
+      "deletedAt": null
+    },
+    {
+      "id": "cat-srv-9",
+      "slug": "software-cloud-architecture-security-audit",
+      "consultantId": "consultant-3",
+      "providerUserId": "user-c3",
+      "providerName": "المهندس كريم الشاذلي",
+      "providerTitle": "استشاري معمارية النظم والذكاء الاصطناعي",
+      "providerAvatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=350&q=80",
+      "providerVerified": true,
+      "categoryId": "scat-software",
+      "categoryNameAr": "البرمجة وتكنولوجيا المعلومات",
+      "categoryNameEn": "Programming & IT",
+      "subcategoryId": "ssub-arch",
+      "subcategoryNameAr": "مراجعة معمارية الأنظمة",
+      "subcategoryNameEn": "System Architecture",
+      "titleAr": "فحص معمارية التطبيق البرمجي وقواعد البيانات وخطة خفض تكاليف السيرفرات",
+      "titleEn": "Software Architecture, Database & Cloud Cost Optimization Review",
+      "shortDescriptionAr": "مراجعة الأداء والأمان وقابلية التوسع لتطبيقات الويب والموبايل وتقليل فاتورة السحابة.",
+      "shortDescriptionEn": "Performance, security, and scalability review to reduce cloud costs and technical debt.",
+      "fullDescriptionAr": "تقييم تقني متعمق للشركات الناشئة والمنصات الرقمية لتحسين سرعة الاستجابة، غلق الثغرات الأمنية الشائعة (OWASP)، وإعادة هيكلة البنية السحابية على AWS أو GCP.",
+      "fullDescriptionEn": "Comprehensive engineering review covering database indexing, OWASP security hardening, and cloud spend reduction.",
+      "imageUrl": "/src/assets/images/service_ai_software_1794569786325.jpg",
+      "priceEgp": 2800,
+      "pricePiasters": 280000,
+      "executionDays": 4,
+      "deliveryMode": "online",
+      "revisionsCount": 1,
+      "includedAr": [
+        "مراجعة تصميم قاعدة البيانات والـ APIs",
+        "تقرير الثغرات الأمنية وأولويات المعالجة",
+        "خطة توفير 25-40% من تكلفة الخوادم السحابية"
+      ],
+      "excludedAr": [
+        "كتابة الكود التنفيذي المباشر داخل المستودع"
+      ],
+      "prerequisitesAr": [
+        "نظرة عامة على البنية التقنية أو صلاحية قراءة للمخطط"
+      ],
+      "deliverablesAr": [
+        "تقرير التدقيق التقني الشامل + جلسة مع الفريق البرمجي"
+      ],
+      "milestones": [
+        {
+          "id": "m1",
+          "stepNumber": 1,
+          "titleAr": "فحص المعمارية واختناقات الأداء",
+          "titleEn": "Architecture Audit",
+          "descriptionAr": "تحليل قواعد البيانات ونقاط الضغط.",
+          "durationDays": 2
+        },
+        {
+          "id": "m2",
+          "stepNumber": 2,
+          "titleAr": "تقديم خريطة التحسين",
+          "titleEn": "Remediation Plan",
+          "descriptionAr": "تسليم التقرير وجلسة المتابعة.",
+          "durationDays": 2
+        }
+      ],
+      "faqs": [],
+      "tags": [
+        "برمجة",
+        "معمارية النظم",
+        "سحابة",
+        "أمن سيبراني"
+      ],
+      "requiresLicense": false,
+      "isFeatured": false,
+      "isRecommended": false,
+      "isDemo": true,
+      "status": "published",
+      "rating": 4.95,
+      "reviewCount": 14,
+      "ordersCount": 19,
+      "createdAt": "2026-03-04T09:00:00Z",
+      "updatedAt": "2026-03-16T09:00:00Z",
+      "deletedAt": null
+    },
+    {
+      "id": "cat-srv-10",
+      "slug": "real-estate-investment-valuation-egypt",
+      "consultantId": "consultant-5",
+      "providerUserId": "user-c5",
+      "providerName": "أ.د. عصام عبد الرحمن",
+      "providerTitle": "خبير دراسات الجدوى والاستثمار العقاري والتجاري",
+      "providerAvatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=350&q=80",
+      "providerVerified": true,
+      "categoryId": "scat-realestate",
+      "categoryNameAr": "العقارات والاستثمار",
+      "categoryNameEn": "Real Estate & Investment",
+      "subcategoryId": "ssub-re-eval",
+      "subcategoryNameAr": "التقييم العقاري ودراسة العائد",
+      "subcategoryNameEn": "Real Estate Valuation",
+      "titleAr": "تقييم استثماري لوحدة تجارية أو إدارية ومقارنة العائد الإيجاري في مصر",
+      "titleEn": "Commercial Real Estate Investment & Rental Yield Evaluation",
+      "shortDescriptionAr": "تحليل القيمة العادلة للمتر، مقارنة مطوري العاصمة والتجمع وزايد، وحساب صافي العائد.",
+      "shortDescriptionEn": "Analyze fair price per sqm, developer track record, and net rental yield in Egypt.",
+      "fullDescriptionAr": "قبل توقيع عقد شراء عقار استثماري أو إداري، نقدم لك دراسة محايدة بعيدة عن وسطاء البيع لتحليل جدول الأقساط، التضخم العقاري، العائد الإيجاري الصافي، ومخاطر التسليم.",
+      "fullDescriptionEn": "Independent real estate investment advisory covering installment NPV, developer credibility, and resale liquidity.",
+      "imageUrl": "/src/assets/images/service_feasibility_realestate_1794569787205.jpg",
+      "priceEgp": 2200,
+      "pricePiasters": 220000,
+      "executionDays": 3,
+      "deliveryMode": "both",
+      "revisionsCount": 2,
+      "includedAr": [
+        "مقارنة مالية بين حتى 3 مشروعات عقارية",
+        "حساب صافي القيمة الحالية للأقساط مقابل الكاش",
+        "تقرير المخاطر ونصائح التفاوض على بنود التعاقد"
+      ],
+      "excludedAr": [
+        "المعاينة الميدانية خارج القاهرة الكبرى بدون ترتيب مسبق"
+      ],
+      "prerequisitesAr": [
+        "بروشور المشروع وجدول السداد المعروض عليك"
+      ],
+      "deliverablesAr": [
+        "ملف المقارنة والتقييم الاستثماري (PDF + Excel)"
+      ],
+      "milestones": [
+        {
+          "id": "m1",
+          "stepNumber": 1,
+          "titleAr": "تحليل جداول السداد والأسعار",
+          "titleEn": "Financial Evaluation",
+          "descriptionAr": "مقارنة العروض المتاحة بسعر السوق.",
+          "durationDays": 2
+        },
+        {
+          "id": "m2",
+          "stepNumber": 2,
+          "titleAr": "جلسة التوصية النهائية",
+          "titleEn": "Advisory Briefing",
+          "descriptionAr": "مناقشة النتائج واختيار البديل الأفضل.",
+          "durationDays": 1
+        }
+      ],
+      "faqs": [],
+      "tags": [
+        "عقارات",
+        "استثمار عقاري",
+        "العاصمة الإدارية",
+        "تقييم"
+      ],
+      "requiresLicense": false,
+      "isFeatured": false,
+      "isRecommended": true,
+      "isDemo": true,
+      "status": "published",
+      "rating": 4.96,
+      "reviewCount": 25,
+      "ordersCount": 33,
+      "createdAt": "2026-03-05T13:00:00Z",
+      "updatedAt": "2026-03-17T13:00:00Z",
+      "deletedAt": null
+    },
+    {
+      "id": "cat-srv-11",
+      "slug": "hr-policies-salary-structure-egypt",
+      "consultantId": "consultant-4",
+      "providerUserId": "user-c4",
+      "providerName": "أ. هالة مرزوق",
+      "providerTitle": "استشارية نمو وتسويق تجارة إلكترونية",
+      "providerAvatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=350&q=80",
+      "providerVerified": true,
+      "categoryId": "scat-hr",
+      "categoryNameAr": "الموارد البشرية والتوظيف",
+      "categoryNameEn": "HR & Recruitment",
+      "subcategoryId": "ssub-comp",
+      "subcategoryNameAr": "هيكلة الأجور والحوافز",
+      "subcategoryNameEn": "Compensation & Grading",
+      "titleAr": "بناء هيكل الموارد البشرية ونظام الحوافز ومؤشرات الأداء للفرق",
+      "titleEn": "HR Structure, Sales Commission & Team KPIs Setup",
+      "shortDescriptionAr": "إعداد نظام تقييم الموظفين وهيكل الرواتب والحوافز المرتبط بالأهداف الشهرية.",
+      "shortDescriptionEn": "Design performance appraisal cycles, commission tiers, and departmental KPIs.",
+      "fullDescriptionAr": "تصميم إطار عملي لإدارة الأداء وربط مكافآت فرق المبيعات والتشغيل بنتائج حقيقية قابلة للقياس، مع لائحة داخلية واضحة تحفظ الانضباط وتقلل معدل دوران الموظفين.",
+      "fullDescriptionEn": "Structured HR & performance framework aligning team incentives with business revenue goals.",
+      "imageUrl": "/src/assets/images/service_marketing_ecommerce_1794569787138.jpg",
+      "priceEgp": 2600,
+      "pricePiasters": 260000,
+      "executionDays": 5,
+      "deliveryMode": "online",
+      "revisionsCount": 2,
+      "includedAr": [
+        "مصفوفة مؤشرات الأداء KPIs لـ 4 أقسام",
+        "نموذج احتساب العمولات والحوافز الشهرية",
+        "جلسة تدريب لمديري الإدارات"
+      ],
+      "excludedAr": [
+        "خدمات التوظيف المباشر أو دفع التأمينات الاجتماعية"
+      ],
+      "prerequisitesAr": [
+        "الهيكل الوظيفي الحالي وعدد الموظفين"
+      ],
+      "deliverablesAr": [
+        "دليل مؤشرات الأداء وهيكل الحوافز (Excel + PDF)"
+      ],
+      "milestones": [
+        {
+          "id": "m1",
+          "stepNumber": 1,
+          "titleAr": "تحليل الأدوار الوظيفية",
+          "titleEn": "Role Mapping",
+          "descriptionAr": "حصر المسميات ومهام كل فريق.",
+          "durationDays": 2
+        },
+        {
+          "id": "m2",
+          "stepNumber": 2,
+          "titleAr": "تصميم نظام التقييم والحوافز",
+          "titleEn": "KPI & Bonus Design",
+          "descriptionAr": "إعداد المعادلات وجلسة التسليم.",
+          "durationDays": 3
+        }
+      ],
+      "faqs": [],
+      "tags": [
+        "موارد بشرية",
+        "توظيف",
+        "رواتب",
+        "مؤشرات أداء"
+      ],
+      "requiresLicense": false,
+      "isFeatured": false,
+      "isRecommended": false,
+      "isDemo": true,
+      "status": "published",
+      "rating": 4.82,
+      "reviewCount": 11,
+      "ordersCount": 14,
+      "createdAt": "2026-03-08T10:00:00Z",
+      "updatedAt": "2026-03-18T10:00:00Z",
+      "deletedAt": null
+    },
+    {
+      "id": "cat-srv-12",
+      "slug": "sme-law-152-financing-readiness",
+      "consultantId": "consultant-5",
+      "providerUserId": "user-c5",
+      "providerName": "أ.د. عصام عبد الرحمن",
+      "providerTitle": "خبير دراسات الجدوى والاستثمار العقاري والتجاري",
+      "providerAvatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=350&q=80",
+      "providerVerified": true,
+      "categoryId": "scat-smes",
+      "categoryNameAr": "المشروعات الصغيرة والمتوسطة",
+      "categoryNameEn": "SMEs Advisory",
+      "subcategoryId": "ssub-law152",
+      "subcategoryNameAr": "توفيق الأوضاع والحوافز (قانون 152)",
+      "subcategoryNameEn": "Law 152 Incentives",
+      "titleAr": "استشارة الاستفادة من حوافز قانون المشروعات 152 وتجهيز ملف التمويل البنكي",
+      "titleEn": "SME Law 152 Tax Incentives & Bank Financing Readiness Advisory",
+      "shortDescriptionAr": "خطة عملية للحصول على شهادة تصنيف جهاز المشروعات وتجهيز الملف الائتماني الميسر.",
+      "shortDescriptionEn": "Step-by-step advisory for MSMEDA certification and subsidized SME credit lines.",
+      "fullDescriptionAr": "تساعد هذه الخدمة أصحاب المشروعات الصغيرة والمتوسطة في مصر على الاستفادة من الضرائب القطعية المبسطة وتسهيلات مبادرات التمويل ذات العائد المنخفض.",
+      "fullDescriptionEn": "Practical roadmap for MSMEDA incentives, simplified tax registration, and credit file preparation.",
+      "imageUrl": "/src/assets/images/service_feasibility_realestate_1794569787205.jpg",
+      "priceEgp": 1750,
+      "pricePiasters": 175000,
+      "executionDays": 3,
+      "deliveryMode": "both",
+      "revisionsCount": 2,
+      "includedAr": [
+        "فحص أهلية المشروع لقانون 152 لسنة 2020",
+        "قائمة المستندات المطلوبة للبنك وجهاز تنمية المشروعات",
+        "مراجعة التدفقات النقدية المبدئية"
+      ],
+      "excludedAr": [
+        "التقديم الإداري الشخصي في مكاتب الجهاز"
+      ],
+      "prerequisitesAr": [
+        "حجم المبيعات السنوية التقريبي والوضع القانوني الحالي"
+      ],
+      "deliverablesAr": [
+        "ملف جاهزية التمويل والحوافز (PDF)"
+      ],
+      "milestones": [
+        {
+          "id": "m1",
+          "stepNumber": 1,
+          "titleAr": "تقييم الأهلية والموقف المالي",
+          "titleEn": "Eligibility Check",
+          "descriptionAr": "تحديد الشريحة الضريبية والتمويلية المناسبة.",
+          "durationDays": 2
+        },
+        {
+          "id": "m2",
+          "stepNumber": 2,
+          "titleAr": "تسليم الملف وجلسة الإرشاد",
+          "titleEn": "Package Delivery",
+          "descriptionAr": "شرح خطوات التقديم بالتفصيل.",
+          "durationDays": 1
+        }
+      ],
+      "faqs": [],
+      "tags": [
+        "مشروعات صغيرة",
+        "قانون 152",
+        "تمويل بنكي",
+        "استيراد وتصدير"
+      ],
+      "requiresLicense": false,
+      "isFeatured": false,
+      "isRecommended": false,
+      "isDemo": true,
+      "status": "published",
+      "rating": 4.9,
+      "reviewCount": 13,
+      "ordersCount": 17,
+      "createdAt": "2026-03-11T10:00:00Z",
+      "updatedAt": "2026-03-18T10:00:00Z",
+      "deletedAt": null
+    },
+    {
+      "id": "cat-srv-13",
+      "slug": "import-export-aci-customs-roadmap",
+      "consultantId": "consultant-1",
+      "providerUserId": "user-consultant-1",
+      "providerName": "د. طارق السعيد العوضي",
+      "providerTitle": "مستشار ضرائب ومراجع حسابات قانوني مقيد",
+      "providerAvatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=350&q=80",
+      "providerVerified": true,
+      "categoryId": "scat-import-export",
+      "categoryNameAr": "الاستيراد والتصدير",
+      "categoryNameEn": "Import & Export",
+      "subcategoryId": "ssub-aci",
+      "subcategoryNameAr": "استشارات منظومة ACI والجمارك",
+      "subcategoryNameEn": "ACI & Customs",
+      "titleAr": "مراجعة التكلفة الجمركية وضرائب الاستيراد ومنظومة التسجيل المسبق ACI",
+      "titleEn": "Import Landed Cost, Customs Taxes & ACI Compliance Advisory",
+      "shortDescriptionAr": "حساب دقيق للرسوم الجمركية وضريبة القيمة المضافة والأرباح عند الاستيراد عبر نافذة.",
+      "shortDescriptionEn": "Accurate landed-cost calculation for customs tariffs, VAT, and Nafeza ACI procedures.",
+      "fullDescriptionAr": "تجنب المفاجآت الجمركية وتأخر الشحنات في الموانئ المصرية عبر مراجعة البنود الجمركية (HS Codes) واحتساب الضرائب والرسوم المستحقة مسبقاً.",
+      "fullDescriptionEn": "Pre-shipment HS code cost verification and Egyptian Nafeza ACI documentation checklist.",
+      "imageUrl": "/src/assets/images/service_tax_finance_1794569785276.jpg",
+      "priceEgp": 1500,
+      "pricePiasters": 150000,
+      "executionDays": 2,
+      "deliveryMode": "online",
+      "revisionsCount": 1,
+      "includedAr": [
+        "حساب التكلفة التقديرية للشحنة (Landed Cost)",
+        "قائمة مستندات التسجيل المسبق ACI عبر نافذة",
+        "جلسة مراجعة 45 دقيقة"
+      ],
+      "excludedAr": [
+        "التخليص الجمركي الميداني أو سداد الرسوم"
+      ],
+      "prerequisitesAr": [
+        "الفاتورة المبدئية للشحنة ووصف البضاعة"
+      ],
+      "deliverablesAr": [
+        "جدول حساب التكاليف الجمركية والضريبية (Excel)"
+      ],
+      "milestones": [
+        {
+          "id": "m1",
+          "stepNumber": 1,
+          "titleAr": "مراجعة البنود الجمركية وحساب الضرائب",
+          "titleEn": "Tariff Calculation",
+          "descriptionAr": "احتساب الرسوم ومراجعة متطلبات ACI.",
+          "durationDays": 2
+        }
+      ],
+      "faqs": [],
+      "tags": [
+        "استيراد",
+        "تصدير",
+        "جمارك",
+        "ACI"
+      ],
+      "requiresLicense": false,
+      "isFeatured": false,
+      "isRecommended": false,
+      "isDemo": true,
+      "status": "published",
+      "rating": 4.88,
+      "reviewCount": 9,
+      "ordersCount": 11,
+      "createdAt": "2026-03-14T11:00:00Z",
+      "updatedAt": "2026-03-20T11:00:00Z",
+      "deletedAt": null
+    },
+    {
+      "id": "cat-srv-14-pending",
+      "slug": "pending-tax-consultation-demo",
+      "consultantId": "consultant-1",
+      "providerUserId": "user-consultant-1",
+      "providerName": "د. طارق السعيد العوضي",
+      "providerTitle": "مستشار ضرائب ومراجع حسابات قانوني مقيد",
+      "providerAvatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=350&q=80",
+      "providerVerified": true,
+      "categoryId": "scat-taxes",
+      "categoryNameAr": "الضرائب والاستشارات المالية",
+      "categoryNameEn": "Tax & Financial Advisory",
+      "subcategoryId": "ssub-vat",
+      "subcategoryNameAr": "ضريبة القيمة المضافة والدخل",
+      "subcategoryNameEn": "VAT & Income Tax",
+      "titleAr": "إعداد ملف الفحص السنوي لضريبة الأرباح التجارية والصناعية (بانتظار الاعتماد)",
+      "titleEn": "Annual Corporate Income Tax Audit Dossier (Pending Approval)",
+      "shortDescriptionAr": "خدمة جديدة مقدمة من المستشار بانتظار مراجعة واعتماد إدارة المنصة قبل النشر.",
+      "shortDescriptionEn": "Newly submitted consulting service awaiting admin catalog review.",
+      "fullDescriptionAr": "خدمة تجريبية تتيح اختبار مسار مراجعة الإدارة للخدمات الجديدة قبل إظهارها للعملاء في الكتالوج العام.",
+      "fullDescriptionEn": "Pending service for admin moderation queue.",
+      "imageUrl": "/src/assets/images/service_tax_finance_1794569785276.jpg",
+      "priceEgp": 2900,
+      "pricePiasters": 290000,
+      "executionDays": 4,
+      "deliveryMode": "online",
+      "revisionsCount": 2,
+      "includedAr": [
+        "مراجعة الإقرار السنوي",
+        "تجهيز ملف الفحص"
+      ],
+      "excludedAr": [
+        "الغرامات الحكومية"
+      ],
+      "prerequisitesAr": [
+        "ميزان المراجعة السنوي"
+      ],
+      "deliverablesAr": [
+        "ملف الفحص الضريبي المتكامل"
+      ],
+      "milestones": [
+        {
+          "id": "m1",
+          "stepNumber": 1,
+          "titleAr": "الفحص والتدقيق",
+          "titleEn": "Audit",
+          "descriptionAr": "فحص الدفاتر والمستندات.",
+          "durationDays": 4
+        }
+      ],
+      "faqs": [],
+      "tags": [
+        "ضرائب الدخل",
+        "مراجعة"
+      ],
+      "requiresLicense": true,
+      "isFeatured": false,
+      "isRecommended": false,
+      "isDemo": true,
+      "status": "pending_review",
+      "rating": 0,
+      "reviewCount": 0,
+      "ordersCount": 0,
+      "createdAt": "2026-03-24T09:00:00Z",
+      "updatedAt": "2026-03-24T09:00:00Z",
+      "deletedAt": null
+    }
+  ],
+  "orders": [
+    {
+      "id": "srv-ord-seed-1",
+      "orderNumber": "SRV-ORD-2026-10421",
+      "serviceId": "cat-srv-1",
+      "serviceTitleAr": "فحص ضريبي شامل ومطابقة منظومة الفاتورة والإيصال الإلكتروني",
+      "serviceImageUrl": "/src/assets/images/service_tax_finance_1794569785276.jpg",
+      "categoryId": "scat-taxes",
+      "clientId": "user-client-1",
+      "clientName": "أحمد محمود القاضي",
+      "consultantId": "consultant-1",
+      "providerUserId": "user-consultant-1",
+      "providerName": "د. طارق السعيد العوضي",
+      "deliveryMode": "online",
+      "packageName": "الباقة الأساسية (شركة فردية)",
+      "clientNotes": "نرغب في مطابقة إقرارات القيمة المضافة للربع الأول مع فواتير البورتال قبل الفحص.",
+      "attachments": [
+        {
+          "id": "att-seed-1",
+          "name": "Q1_VAT_Summary.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 245120,
+          "url": "/api/uploads/sample-vat-summary.txt",
+          "uploadedBy": "user-client-1",
+          "uploadedAt": "2026-03-08T10:00:00Z"
+        }
+      ],
+      "deliverables": [
+        {
+          "id": "sdel-seed-1",
+          "title": "تقرير الفحص والمطابقة النهائي",
+          "notes": "تم تدقيق 184 فاتورة ومطابقة فروق الكود الضريبي بنجاح.",
+          "fileUrl": "/api/uploads/sample-tax-report.txt",
+          "fileName": "Tax_Audit_Report_Final.pdf",
+          "submittedAt": "2026-03-10T15:00:00Z"
+        }
+      ],
+      "events": [
+        {
+          "id": "sevt-1",
+          "orderId": "srv-ord-seed-1",
+          "fromStatus": null,
+          "toStatus": "pending",
+          "actorId": "user-client-1",
+          "actorName": "أحمد محمود القاضي",
+          "actorRole": "client",
+          "note": "تم إنشاء طلب الخدمة وإرفاق المستندات المبدئية.",
+          "createdAt": "2026-03-08T10:00:00Z"
+        },
+        {
+          "id": "sevt-2",
+          "orderId": "srv-ord-seed-1",
+          "fromStatus": "pending",
+          "toStatus": "paid",
+          "actorId": "user-client-1",
+          "actorName": "أحمد محمود القاضي",
+          "actorRole": "client",
+          "note": "تم تأكيد الدفع (وضع المحاكاة المحلي لعدم تفعيل بوابة دفع حية).",
+          "createdAt": "2026-03-08T10:15:00Z"
+        },
+        {
+          "id": "sevt-3",
+          "orderId": "srv-ord-seed-1",
+          "fromStatus": "in_progress",
+          "toStatus": "completed",
+          "actorId": "user-client-1",
+          "actorName": "أحمد محمود القاضي",
+          "actorRole": "client",
+          "note": "تم استلام التقرير النهائي واعتماد اكتمال الخدمة.",
+          "createdAt": "2026-03-10T16:15:00Z"
+        }
+      ],
+      "priceEgp": 2400,
+      "totalPiasters": 240000,
+      "platformFeePercent": 15,
+      "platformFeeEgp": 360,
+      "platformFeePiasters": 36000,
+      "netProviderEgp": 2040,
+      "netProviderPiasters": 204000,
+      "status": "completed",
+      "paymentMethod": "card_online",
+      "paymentModeLabel": "تأكيد محاكاة محلي (بدون بوابة دفع حية)",
+      "idempotencyKey": "IDEM-SRV-SEED-1",
+      "paidAt": "2026-03-08T10:15:00Z",
+      "executionDays": 3,
+      "createdAt": "2026-03-08T10:00:00Z",
+      "updatedAt": "2026-03-10T16:15:00Z"
+    },
+    {
+      "id": "srv-ord-seed-2",
+      "orderNumber": "SRV-ORD-2026-10890",
+      "serviceId": "cat-srv-1",
+      "serviceTitleAr": "فحص ضريبي شامل ومطابقة منظومة الفاتورة والإيصال الإلكتروني",
+      "serviceImageUrl": "/src/assets/images/service_tax_finance_1794569785276.jpg",
+      "categoryId": "scat-taxes",
+      "clientId": "user-client-1",
+      "clientName": "أحمد محمود القاضي",
+      "consultantId": "consultant-1",
+      "providerUserId": "user-consultant-1",
+      "providerName": "د. طارق السعيد العوضي",
+      "deliveryMode": "online",
+      "clientNotes": "تجهيز مراجعة إضافية لإيصال البورتال قبل نهاية الشهر.",
+      "attachments": [],
+      "deliverables": [],
+      "events": [
+        {
+          "id": "sevt-20",
+          "orderId": "srv-ord-seed-2",
+          "fromStatus": null,
+          "toStatus": "pending",
+          "actorId": "user-client-1",
+          "actorName": "أحمد محمود القاضي",
+          "actorRole": "client",
+          "note": "طلب خدمة جديد بانتظار موافقة مقدم الخدمة.",
+          "createdAt": "2026-03-23T09:00:00Z"
+        }
+      ],
+      "priceEgp": 2400,
+      "totalPiasters": 240000,
+      "platformFeePercent": 15,
+      "platformFeeEgp": 360,
+      "platformFeePiasters": 36000,
+      "netProviderEgp": 2040,
+      "netProviderPiasters": 204000,
+      "status": "pending",
+      "executionDays": 3,
+      "createdAt": "2026-03-23T09:00:00Z",
+      "updatedAt": "2026-03-23T09:00:00Z"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "srev-1",
+      "serviceId": "cat-srv-1",
+      "orderId": "srv-ord-seed-1",
+      "clientId": "user-client-1",
+      "clientName": "أحمد محمود القاضي",
+      "rating": 5,
+      "comment": "تقرير الفحص الضريبي وفر علينا غرامات كبيرة في الفاتورة الإلكترونية، والالتزام بالموعد كان ممتازاً.",
+      "verifiedPurchase": true,
+      "createdAt": "2026-03-10T16:30:00Z"
+    },
+    {
+      "id": "srev-2",
+      "serviceId": "cat-srv-2",
+      "orderId": "srv-ord-seed-2",
+      "clientId": "user-client-1",
+      "clientName": "م. عمر عبد العزيز",
+      "rating": 5,
+      "comment": "صياغة احترافية لعقد التأسيس واتفاقية الشركاء وضحت كل نقاط التخارج قبل التوقيع في هيئة الاستثمار.",
+      "verifiedPurchase": true,
+      "createdAt": "2026-03-12T14:15:00Z"
+    },
+    {
+      "id": "srev-3",
+      "serviceId": "cat-srv-5",
+      "orderId": "srv-ord-seed-3",
+      "clientId": "user-client-1",
+      "clientName": "شركة النيل للتطوير",
+      "rating": 5,
+      "comment": "النموذج المالي لدراسة الجدوى كان متكاملاً وساعدنا في العرض على البنك للحصول على التمويل.",
+      "verifiedPurchase": true,
+      "createdAt": "2026-03-15T11:20:00Z"
+    }
+  ],
+  "favorites": {
+    "user-client-1": [
+      "cat-srv-1",
+      "cat-srv-3"
+    ]
+  },
+  "approvals": [
+    {
+      "id": "appr-1",
+      "serviceId": "cat-srv-1",
+      "serviceTitle": "فحص ضريبي شامل ومطابقة منظومة الفاتورة والإيصال الإلكتروني",
+      "providerName": "د. طارق السعيد العوضي",
+      "adminId": "user-admin-1",
+      "adminName": "سارة إبراهيم - مدير العمليات",
+      "decision": "approved",
+      "reason": "تم التحقق من قيد المحاسب والمراجع بوزارة المالية وسلامة نطاق الخدمة.",
+      "createdAt": "2026-02-10T10:00:00Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif-1",
+      "userId": "user-consultant-1",
+      "title": "طلب خدمة استشارية جديد #SRV-ORD-2026-10890",
+      "message": "أرسل العميل أحمد محمود القاضي طلباً جديداً على خدمة \"فحص ضريبي شامل ومطابقة منظومة الفاتورة\".",
+      "type": "order",
+      "linkUrl": "/dashboard",
+      "isRead": false,
+      "createdAt": "2026-03-23T09:00:00Z"
+    },
+    {
+      "id": "notif-2",
+      "userId": "user-client-1",
+      "title": "تم استلام طلبك #SRV-ORD-2026-10890",
+      "message": "تم إرسال طلبك إلى د. طارق السعيد العوضي وبانتظار القبول.",
+      "type": "order",
+      "linkUrl": "/dashboard",
+      "isRead": false,
+      "createdAt": "2026-03-23T09:00:00Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "clog-init-1",
+      "actorId": "user-admin-1",
+      "actorRole": "admin",
+      "action": "CATALOG_INITIALIZED",
+      "entityType": "system",
+      "entityId": "services-catalog",
+      "details": "تهيئة كتالوج الخدمات الاستشارية وربط 18 تصنيفاً رئيسياً بالمستشارين المعتمدين.",
+      "createdAt": "2026-11-13T11:50:10.729Z"
+    }
+  ]
+}

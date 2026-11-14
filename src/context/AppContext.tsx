@@ -18,7 +18,10 @@ import {
   SupportTicket,
   SupportingProduct,
   DeliveryMode,
+  AppNotification,
+  CatalogService,
 } from '../types';
+import { catalogFetch } from '../utils/catalogApi';
 import {
   INITIAL_USERS,
   INITIAL_CATEGORIES,
@@ -60,9 +63,15 @@ interface AppContextType {
   loginUser: (email: string, role?: UserRole) => boolean;
   registerUser: (name: string, email: string, phone: string, role: UserRole) => boolean;
 
-  // Navigation
+  // Navigation & URL Sync
   activeView: string;
   setActiveView: (view: string) => void;
+  selectedServiceId: string | null;
+  navigateToService: (serviceId: string) => void;
+  navigateToServicesCatalog: (filters?: { providerId?: string; categoryId?: string; q?: string }) => void;
+  catalogInitialFilters: { providerId?: string; categoryId?: string; q?: string };
+  navigateToConsultantDirectoryWithService: (categoryId?: string, query?: string) => void;
+  consultantDirectorySeed: { categoryId?: string; query?: string };
 
   // Data Collections
   categories: Category[];
@@ -79,6 +88,17 @@ interface AppContextType {
   auditLogs: AuditLog[];
   supportTickets: SupportTicket[];
   supportingProducts: SupportingProduct[];
+
+  // Catalog Notifications & Order Modal
+  notifications: AppNotification[];
+  unreadNotificationsCount: number;
+  refreshNotifications: () => Promise<void>;
+  markNotificationRead: (id: string) => Promise<void>;
+  markAllNotificationsRead: () => Promise<void>;
+  serviceOrderModalService: CatalogService | null;
+  setServiceOrderModalService: (srv: CatalogService | null) => void;
+  catalogRefreshTick: number;
+  triggerCatalogRefresh: () => void;
 
   // Settings
   platformFeePercent: number;
@@ -171,7 +191,95 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     return INITIAL_USERS[0]; // Client أحمد محمود
   });
 
-  const [activeView, setActiveView] = useState<string>('home');
+  const parseRouteFromLocation = (): { view: string; serviceId: string | null } => {
+    if (typeof window === 'undefined') return { view: 'home', serviceId: null };
+    const pathname = window.location.pathname || '/';
+    if (pathname.startsWith('/services/')) {
+      const id = decodeURIComponent(pathname.replace('/services/', '').split('/')[0] || '');
+      if (id) return { view: 'service_detail', serviceId: id };
+    }
+    if (pathname === '/services' || pathname === '/services/') {
+      return { view: 'services', serviceId: null };
+    }
+    return { view: 'home', serviceId: null };
+  };
+
+  const initialRoute = parseRouteFromLocation();
+  const [activeView, setActiveViewState] = useState<string>(initialRoute.view);
+  const [selectedServiceId, setSelectedServiceId] = useState<string | null>(initialRoute.serviceId);
+  const [catalogInitialFilters, setCatalogInitialFilters] = useState<{
+    providerId?: string;
+    categoryId?: string;
+    q?: string;
+  }>({});
+  const [consultantDirectorySeed, setConsultantDirectorySeed] = useState<{
+    categoryId?: string;
+    query?: string;
+  }>({});
+  const [serviceOrderModalService, setServiceOrderModalService] = useState<CatalogService | null>(null);
+  const [notifications, setNotifications] = useState<AppNotification[]>([]);
+  const [catalogRefreshTick, setCatalogRefreshTick] = useState<number>(0);
+
+  const triggerCatalogRefresh = () => setCatalogRefreshTick((prev) => prev + 1);
+
+  const setActiveView = (view: string) => {
+    setActiveViewState(view);
+    if (typeof window !== 'undefined') {
+      if (view === 'services') {
+        setSelectedServiceId(null);
+        if (window.location.pathname !== '/services') {
+          window.history.pushState({ view: 'services' }, '', '/services');
+        }
+      } else if (view !== 'service_detail') {
+        setSelectedServiceId(null);
+        if (window.location.pathname !== '/') {
+          window.history.pushState({ view }, '', '/');
+        }
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const navigateToService = (serviceId: string) => {
+    setSelectedServiceId(serviceId);
+    setActiveViewState('service_detail');
+    if (typeof window !== 'undefined') {
+      const targetPath = `/services/${encodeURIComponent(serviceId)}`;
+      if (window.location.pathname !== targetPath) {
+        window.history.pushState({ view: 'service_detail', serviceId }, '', targetPath);
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const navigateToServicesCatalog = (filters?: { providerId?: string; categoryId?: string; q?: string }) => {
+    setCatalogInitialFilters(filters || {});
+    setSelectedServiceId(null);
+    setActiveViewState('services');
+    if (typeof window !== 'undefined') {
+      if (window.location.pathname !== '/services') {
+        window.history.pushState({ view: 'services' }, '', '/services');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const navigateToConsultantDirectoryWithService = (categoryId?: string, query?: string) => {
+    setConsultantDirectorySeed({ categoryId, query });
+    setSelectedServiceId(null);
+    setActiveView('consultants');
+  };
+
+  useEffect(() => {
+    const onPopState = () => {
+      const parsed = parseRouteFromLocation();
+      setActiveViewState(parsed.view);
+      setSelectedServiceId(parsed.serviceId);
+    };
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, []);
+
   const [categories, setCategories] = useState<Category[]>(INITIAL_CATEGORIES);
   const [consultants, setConsultants] = useState<ConsultantProfile[]>(INITIAL_CONSULTANTS);
   const [services, setServices] = useState<ConsultationService[]>(INITIAL_SERVICES);
@@ -224,6 +332,45 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [authMode, setAuthMode] = useState<'login' | 'register'>('login');
   const [activeOrderWorkspaceId, setActiveOrderWorkspaceId] = useState<string | null>(null);
+
+  const refreshNotifications = async () => {
+    try {
+      const data = await catalogFetch<{ success: boolean; notifications: AppNotification[] }>(
+        '/api/notifications',
+        {},
+        currentUser
+      );
+      if (data.success && Array.isArray(data.notifications)) {
+        setNotifications(data.notifications);
+      }
+    } catch {
+      // silent fallback
+    }
+  };
+
+  const markNotificationRead = async (id: string) => {
+    try {
+      await catalogFetch(`/api/notifications/${encodeURIComponent(id)}/read`, { method: 'PATCH' }, currentUser);
+      setNotifications((prev) => prev.map((n) => (n.id === id ? { ...n, isRead: true } : n)));
+    } catch {
+      // ignore
+    }
+  };
+
+  const markAllNotificationsRead = async () => {
+    try {
+      await catalogFetch('/api/notifications/read-all', { method: 'POST' }, currentUser);
+      setNotifications((prev) => prev.map((n) => ({ ...n, isRead: true })));
+    } catch {
+      // ignore
+    }
+  };
+
+  useEffect(() => {
+    refreshNotifications();
+  }, [currentUser.id, catalogRefreshTick]);
+
+  const unreadNotificationsCount = notifications.filter((n) => !n.isRead).length;
 
   // Update HTML direction when language changes
   useEffect(() => {
@@ -864,6 +1011,12 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         registerUser,
         activeView,
         setActiveView,
+        selectedServiceId,
+        navigateToService,
+        navigateToServicesCatalog,
+        catalogInitialFilters,
+        navigateToConsultantDirectoryWithService,
+        consultantDirectorySeed,
         categories,
         consultants,
         services,
@@ -878,6 +1031,15 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         auditLogs,
         supportTickets,
         supportingProducts,
+        notifications,
+        unreadNotificationsCount,
+        refreshNotifications,
+        markNotificationRead,
+        markAllNotificationsRead,
+        serviceOrderModalService,
+        setServiceOrderModalService,
+        catalogRefreshTick,
+        triggerCatalogRefresh,
         platformFeePercent,
         setPlatformFeePercent,
         affiliateFeePercent,

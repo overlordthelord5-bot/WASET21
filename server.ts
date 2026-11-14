@@ -4,13 +4,15 @@ import { GoogleGenAI } from '@google/genai';
 import dotenv from 'dotenv';
 import path from 'path';
 import fs from 'fs';
+import { createServicesRouter } from './server/servicesRouter';
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 
-app.use(express.json());
+app.use(express.json({ limit: '8mb' }));
+app.use('/api', createServicesRouter());
 
 // In-memory & JSON file persistence for newsletter subscribers
 const SUBSCRIBERS_FILE = path.resolve(process.cwd(), 'data', 'newsletter_subscribers.json');

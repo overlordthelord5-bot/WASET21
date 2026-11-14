@@ -5,6 +5,8 @@ import { HeroSection } from './components/HeroSection';
 import { CategoryCatalog } from './components/CategoryCatalog';
 import { ConsultantDirectory } from './components/ConsultantDirectory';
 import { ServicesCatalog } from './components/ServicesCatalog';
+import { ServiceDetailsPage } from './components/ServiceDetailsPage';
+import { ServiceOrderModal } from './components/ServiceOrderModal';
 import { RFQSection } from './components/RFQSection';
 import { DashboardContainer } from './components/Dashboards/DashboardContainer';
 import { HelpCenter } from './components/HelpCenter';
@@ -32,6 +34,8 @@ const MainContent: React.FC = () => {
   const {
     activeView,
     setActiveView,
+    selectedServiceId,
+    navigateToServicesCatalog,
     categories,
     consultants,
     reviews,
@@ -58,7 +62,7 @@ const MainContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F8FAFC]">
+    <div className="min-h-screen flex flex-col bg-[#F8FAFC] overflow-x-clip">
       <Navbar />
 
       <main className="flex-1">
@@ -83,13 +87,22 @@ const MainContent: React.FC = () => {
                   </p>
                 </div>
 
-                <button
-                  onClick={() => setActiveView('categories')}
-                  className="text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1 cursor-pointer self-start sm:self-auto"
-                >
-                  <span>استعراض جميع التخصصات (26+)</span>
-                  {lang === 'ar' ? <ArrowLeft className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
-                </button>
+                <div className="flex flex-wrap items-center gap-4 self-start sm:self-auto">
+                  <button
+                    onClick={() => navigateToServicesCatalog()}
+                    className="text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 px-3.5 py-2 rounded-xl flex items-center gap-1.5 cursor-pointer transition whitespace-nowrap"
+                  >
+                    <span>تصفح كتالوج الخدمات الجاهزة</span>
+                    {lang === 'ar' ? <ArrowLeft className="w-3.5 h-3.5" /> : <ArrowRight className="w-3.5 h-3.5" />}
+                  </button>
+                  <button
+                    onClick={() => setActiveView('categories')}
+                    className="text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1 cursor-pointer whitespace-nowrap"
+                  >
+                    <span>استعراض جميع التخصصات (26+)</span>
+                    {lang === 'ar' ? <ArrowLeft className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
+                  </button>
+                </div>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
@@ -403,6 +416,11 @@ const MainContent: React.FC = () => {
         {/* VIEW: SERVICES */}
         {activeView === 'services' && <ServicesCatalog />}
 
+        {/* VIEW: SERVICE DETAILS */}
+        {activeView === 'service_detail' && selectedServiceId && (
+          <ServiceDetailsPage serviceId={selectedServiceId} />
+        )}
+
         {/* VIEW: RFQ */}
         {activeView === 'rfq' && <RFQSection />}
 
@@ -418,6 +436,7 @@ const MainContent: React.FC = () => {
       {/* Globally Mounted Modals */}
       <ConsultantProfileModal />
       <BookingModal />
+      <ServiceOrderModal />
       <AIAssistantModal />
       <AuthModal />
     </div>

@@ -319,3 +319,231 @@ export interface SupportingProduct {
   fileFormat: string;
   rating: number;
 }
+
+// ==============================================================================
+// CONSULTING SERVICES CATALOG & ORDERS TYPES
+// ==============================================================================
+
+export type CatalogDeliveryMode = 'online' | 'in_person' | 'both';
+
+export type CatalogServiceStatus =
+  | 'draft'
+  | 'pending_review'
+  | 'published'
+  | 'paused'
+  | 'rejected'
+  | 'suspended';
+
+export type ServiceOrderStatus =
+  | 'pending'
+  | 'accepted'
+  | 'awaiting_payment'
+  | 'paid'
+  | 'in_progress'
+  | 'delivered'
+  | 'completed'
+  | 'cancelled'
+  | 'disputed'
+  | 'refunded';
+
+export interface ServiceSubcategory {
+  id: string;
+  parentId: string;
+  slug: string;
+  nameAr: string;
+  nameEn: string;
+  isActive: boolean;
+}
+
+export interface ServiceCategoryNode {
+  id: string;
+  slug: string;
+  nameAr: string;
+  nameEn: string;
+  descriptionAr: string;
+  descriptionEn: string;
+  iconName: string;
+  requiresLicense: boolean;
+  displayOrder: number;
+  isActive: boolean;
+  subcategories: ServiceSubcategory[];
+  serviceCount?: number;
+}
+
+export interface ServicePhaseMilestone {
+  id: string;
+  stepNumber: number;
+  titleAr: string;
+  titleEn: string;
+  descriptionAr: string;
+  durationDays: number;
+}
+
+export interface ServiceFAQ {
+  id: string;
+  questionAr: string;
+  questionEn: string;
+  answerAr: string;
+  answerEn: string;
+}
+
+export interface ServicePackageTier {
+  id: string;
+  nameAr: string;
+  nameEn: string;
+  priceEgp: number;
+  executionDays: number;
+  revisionsCount: number;
+  featuresAr: string[];
+}
+
+export interface CatalogService {
+  id: string;
+  slug: string;
+  consultantId: string;
+  providerUserId: string;
+  providerName: string;
+  providerTitle: string;
+  providerAvatar: string;
+  providerVerified: boolean;
+  categoryId: string;
+  categoryNameAr: string;
+  categoryNameEn: string;
+  subcategoryId: string;
+  subcategoryNameAr: string;
+  subcategoryNameEn: string;
+  titleAr: string;
+  titleEn: string;
+  shortDescriptionAr: string;
+  shortDescriptionEn: string;
+  fullDescriptionAr: string;
+  fullDescriptionEn: string;
+  imageUrl: string;
+  priceEgp: number;
+  pricePiasters: number;
+  executionDays: number;
+  deliveryMode: CatalogDeliveryMode;
+  revisionsCount: number;
+  includedAr: string[];
+  excludedAr: string[];
+  prerequisitesAr: string[];
+  deliverablesAr: string[];
+  milestones: ServicePhaseMilestone[];
+  faqs: ServiceFAQ[];
+  packages?: ServicePackageTier[];
+  tags: string[];
+  requiresLicense: boolean;
+  isFeatured: boolean;
+  isRecommended: boolean;
+  isDemo: boolean;
+  status: CatalogServiceStatus;
+  rejectionReason?: string;
+  rating: number;
+  reviewCount: number;
+  ordersCount: number;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt?: string | null;
+}
+
+export interface ServiceReviewItem {
+  id: string;
+  serviceId: string;
+  orderId: string;
+  clientId: string;
+  clientName: string;
+  rating: number;
+  comment: string;
+  verifiedPurchase: boolean;
+  createdAt: string;
+}
+
+export interface ServiceOrderAttachment {
+  id: string;
+  name: string;
+  mimeType: string;
+  sizeBytes: number;
+  url: string;
+  uploadedBy: string;
+  uploadedAt: string;
+}
+
+export interface ServiceOrderDeliverable {
+  id: string;
+  title: string;
+  notes: string;
+  fileUrl?: string;
+  fileName?: string;
+  submittedAt: string;
+}
+
+export interface ServiceOrderEvent {
+  id: string;
+  orderId: string;
+  fromStatus: ServiceOrderStatus | null;
+  toStatus: ServiceOrderStatus;
+  actorId: string;
+  actorName: string;
+  actorRole: UserRole;
+  note: string;
+  createdAt: string;
+}
+
+export interface ServiceOrder {
+  id: string;
+  orderNumber: string;
+  serviceId: string;
+  serviceTitleAr: string;
+  serviceImageUrl: string;
+  categoryId: string;
+  clientId: string;
+  clientName: string;
+  consultantId: string;
+  providerUserId: string;
+  providerName: string;
+  deliveryMode: CatalogDeliveryMode;
+  packageName?: string;
+  clientNotes: string;
+  attachments: ServiceOrderAttachment[];
+  deliverables: ServiceOrderDeliverable[];
+  events: ServiceOrderEvent[];
+  priceEgp: number;
+  totalPiasters: number;
+  platformFeePercent: number;
+  platformFeeEgp: number;
+  platformFeePiasters: number;
+  netProviderEgp: number;
+  netProviderPiasters: number;
+  status: ServiceOrderStatus;
+  paymentMethod?: 'fawry' | 'vodafone_cash' | 'meeza' | 'card_online';
+  paymentModeLabel?: string;
+  idempotencyKey?: string;
+  paidAt?: string;
+  executionDays: number;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface AppNotification {
+  id: string;
+  userId: string;
+  title: string;
+  message: string;
+  type: 'order' | 'approval' | 'payment' | 'system';
+  linkUrl?: string;
+  isRead: boolean;
+  createdAt: string;
+}
+
+export interface ServiceApprovalRecord {
+  id: string;
+  serviceId: string;
+  serviceTitle: string;
+  providerName: string;
+  adminId: string;
+  adminName: string;
+  decision: 'approved' | 'rejected' | 'suspended';
+  reason: string;
+  createdAt: string;
+}
+

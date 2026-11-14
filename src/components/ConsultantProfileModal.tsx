@@ -19,7 +19,8 @@ import {
   Check,
 } from 'lucide-react';
 import { generateAvailableSlots } from '../utils/booking';
-import { ConsultationService } from '../types';
+import { CatalogService, ConsultationService } from '../types';
+import { catalogFetch } from '../utils/catalogApi';
 
 export const ConsultantProfileModal: React.FC = () => {
   const {
@@ -33,9 +34,33 @@ export const ConsultantProfileModal: React.FC = () => {
     bookings,
     reviews,
     lang,
+    currentUser,
+    navigateToService,
+    navigateToServicesCatalog,
+    setServiceOrderModalService,
   } = useApp();
 
   const [activeTab, setActiveTab] = useState<'overview' | 'services' | 'reviews' | 'slots'>('overview');
+  const [catalogServices, setCatalogServices] = React.useState<CatalogService[]>([]);
+
+  React.useEffect(() => {
+    if (!selectedConsultant) return;
+    let mounted = true;
+    catalogFetch<{ success: boolean; items: CatalogService[] }>(
+      `/api/services?providerId=${encodeURIComponent(selectedConsultant.id)}&pageSize=20`,
+      {},
+      currentUser
+    )
+      .then((res) => {
+        if (mounted) setCatalogServices(res.items || []);
+      })
+      .catch(() => {
+        if (mounted) setCatalogServices([]);
+      });
+    return () => {
+      mounted = false;
+    };
+  }, [selectedConsultant?.id]);
 
   if (!selectedConsultant || isBookingModalOpen) return null;
 
@@ -271,9 +296,69 @@ export const ConsultantProfileModal: React.FC = () => {
           )}
 
           {activeTab === 'services' && (
-            <div className="space-y-4 text-right">
+            <div className="space-y-5 text-right">
+              {catalogServices.length > 0 && (
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <h4 className="text-xs font-bold text-blue-700 uppercase tracking-wider">
+                      خدمات المستشار في كتالوج الخدمات ({catalogServices.length})
+                    </h4>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const cId = selectedConsultant.id;
+                        setSelectedConsultant(null);
+                        navigateToServicesCatalog({ providerId: cId });
+                      }}
+                      className="text-xs font-bold text-blue-600 hover:underline cursor-pointer"
+                    >
+                      عرض جميع خدماته في الكتالوج ←
+                    </button>
+                  </div>
+
+                  {catalogServices.map((csrv) => (
+                    <div
+                      key={csrv.id}
+                      className="bg-blue-50/40 p-4 rounded-2xl border border-blue-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+                    >
+                      <div className="space-y-1">
+                        <span className="text-[11px] font-bold text-blue-700">{csrv.categoryNameAr}</span>
+                        <h5 className="text-sm font-bold text-slate-900">{csrv.titleAr}</h5>
+                        <p className="text-xs text-slate-600 line-clamp-2">{csrv.shortDescriptionAr}</p>
+                        <span className="text-xs font-black text-slate-900 block pt-1">
+                          {csrv.priceEgp.toLocaleString('ar-EG')} ج.م • التنفيذ خلال {csrv.executionDays} أيام
+                        </span>
+                      </div>
+
+                      <div className="flex items-center gap-2 shrink-0">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setSelectedConsultant(null);
+                            navigateToService(csrv.id);
+                          }}
+                          className="px-3 py-2 bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 rounded-xl text-xs font-bold cursor-pointer"
+                        >
+                          تفاصيل الخدمة
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setSelectedConsultant(null);
+                            setServiceOrderModalService(csrv);
+                          }}
+                          className="px-3.5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold cursor-pointer"
+                        >
+                          طلب الخدمة
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
               <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
-                الباقات الاستشارية المخصصة
+                الباقات الاستشارية وجلسات الحجز المباشر
               </h4>
               {consultantServices.map((srv) => (
                 <div

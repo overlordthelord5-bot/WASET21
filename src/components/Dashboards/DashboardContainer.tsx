@@ -36,6 +36,9 @@ import {
 } from 'lucide-react';
 import { piastersToEgp } from '../../utils/ledger';
 import { OrderWorkspace } from '../OrderWorkspace';
+import { ServiceOrdersTab } from './ServiceOrdersTab';
+import { ProviderServicesTab } from './ProviderServicesTab';
+import { AdminCatalogTab } from './AdminCatalogTab';
 
 export const DashboardContainer: React.FC = () => {
   const {
@@ -70,10 +73,10 @@ export const DashboardContainer: React.FC = () => {
   } = useApp();
 
   const [adminTab, setAdminTab] = useState<
-    'metrics' | 'verifications' | 'ledger' | 'disputes' | 'support' | 'affiliate' | 'audit' | 'settings'
+    'metrics' | 'catalog' | 'service_orders' | 'verifications' | 'ledger' | 'disputes' | 'support' | 'affiliate' | 'audit' | 'settings'
   >('metrics');
-  const [clientTab, setClientTab] = useState<'bookings' | 'orders' | 'rfqs' | 'support' | 'affiliate'>('bookings');
-  const [consultantTab, setConsultantTab] = useState<'schedule' | 'orders' | 'earnings' | 'support' | 'affiliate'>('schedule');
+  const [clientTab, setClientTab] = useState<'service_orders' | 'bookings' | 'orders' | 'rfqs' | 'support' | 'affiliate'>('service_orders');
+  const [consultantTab, setConsultantTab] = useState<'my_services' | 'service_orders' | 'schedule' | 'orders' | 'earnings' | 'support' | 'affiliate'>('my_services');
 
   // Support ticket form state
   const [isTicketModalOpen, setIsTicketModalOpen] = useState(false);
@@ -190,6 +193,7 @@ export const DashboardContainer: React.FC = () => {
         {/* Client Tabs */}
         <div className="flex flex-wrap gap-2 border-b border-slate-200 pb-2 text-xs">
           {[
+            { id: 'service_orders', label: 'طلبات الخدمات الاستشارية' },
             { id: 'bookings', label: `جلسات الاستشارة والحجوزات (${myBookings.length})` },
             { id: 'orders', label: `مساحة العمل والمخرجات (${myOrders.length})` },
             { id: 'rfqs', label: `طلبات عروض الأسعار RFQ (${myRfqs.length})` },
@@ -209,6 +213,9 @@ export const DashboardContainer: React.FC = () => {
             </button>
           ))}
         </div>
+
+        {/* Service Orders View */}
+        {clientTab === 'service_orders' && <ServiceOrdersTab mode="client" />}
 
         {/* Bookings View */}
         {clientTab === 'bookings' && (
@@ -585,6 +592,8 @@ export const DashboardContainer: React.FC = () => {
         {/* Consultant Navigation */}
         <div className="flex flex-wrap gap-2 border-b border-slate-200 pb-2 text-xs">
           {[
+            { id: 'my_services', label: 'خدماتي في الكتالوج' },
+            { id: 'service_orders', label: 'طلبات الخدمات الواردة' },
             { id: 'schedule', label: `جدول الجلسات القادمة (${incomingBookings.length})` },
             { id: 'orders', label: `طلبات العمل والمخرجات (${consultantOrders.length})` },
             { id: 'earnings', label: `الأرباح والمحفظة وسحب الرصيد` },
@@ -604,6 +613,9 @@ export const DashboardContainer: React.FC = () => {
             </button>
           ))}
         </div>
+
+        {consultantTab === 'my_services' && <ProviderServicesTab />}
+        {consultantTab === 'service_orders' && <ServiceOrdersTab mode="provider" />}
 
         {/* Schedule View */}
         {consultantTab === 'schedule' && (
@@ -890,6 +902,8 @@ export const DashboardContainer: React.FC = () => {
         <div className="flex flex-wrap gap-2 border-b border-slate-200 pb-2 text-xs">
           {[
             { id: 'metrics', label: 'المؤشرات والعمليات' },
+            { id: 'catalog', label: 'إدارة كتالوج الخدمات والتصنيفات' },
+            { id: 'service_orders', label: 'مراقبة طلبات الخدمات والنزاعات' },
             { id: 'verifications', label: `طلبات اعتماد المستشارين (${consultants.length})` },
             { id: 'ledger', label: `دفتر الأستاذ العام القيد المزدوج (${ledgerTransactions.length})` },
             { id: 'disputes', label: `إدارة النزاعات والتسويات (${disputes.length})` },
@@ -911,6 +925,9 @@ export const DashboardContainer: React.FC = () => {
             </button>
           ))}
         </div>
+
+        {adminTab === 'catalog' && <AdminCatalogTab />}
+        {adminTab === 'service_orders' && <ServiceOrdersTab mode="admin" />}
 
         {/* Tab 1: Verifications Queue */}
         {adminTab === 'verifications' && (
